@@ -1,0 +1,19 @@
+body {
+  padding: 0px;
+  margin: 0px;
+}
+
+#xpanel {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 1920px;
+  height: 1080px;
+  overflow:hidden;
+}
+
+#xpanel > * {
+  position: absolute;
+  padding: 0;
+  margin: 0;
+}
