@@ -27,7 +27,7 @@ $(document).ready(function() {
   $("#submitButton").click(function() {
     var jsonData = ko.toJS(viewModel);
 
-    $.post("data.json", data, function(returnedData) {
+    $.post("data.json", jsonData, function(returnedData) {
       console.log("Sucessfully saved JSON data");
     })
   });
