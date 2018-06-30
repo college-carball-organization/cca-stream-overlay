@@ -30,7 +30,7 @@ $(document).ready(function() {
     $.post("data.json", jsonData, function(returnedData) {
       console.log("Sucessfully saved JSON data");
 
-      sucess: function(msg) {
+      success: function(msg) {
         alert("the saving worked wtf");
       }
 
