@@ -29,6 +29,15 @@ $(document).ready(function() {
 
     $.post("data.json", jsonData, function(returnedData) {
       console.log("Sucessfully saved JSON data");
+
+      sucess: function(msg) {
+        alert("the saving worked wtf");
+      }
+
+      error: function(XMLHTTPRequest, textStatus, errorThrown) {
+        alert("ERROR");
+        console.log(textStatus);
+      }
     })
   });
 
