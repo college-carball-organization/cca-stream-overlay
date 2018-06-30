@@ -6,7 +6,7 @@ var blueP4 = $("blueP4");
 var blueP5 = $("blueP5");
 
 $(document).ready(function() {
-  $.getJSON("http://prod.collegecarball.net/data.json", function(data) {
+  $.getJSON("http://prod.collegecarball.net/cca-stream-overlay/data.json", function(data) {
     viewModel.caster1(data.caster1.name);
     viewModel.caster2(data.caster2.name);
     viewModel.blueName(data.blueName.name);
