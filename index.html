@@ -5,6 +5,7 @@
 
     <title> Overlay Editor </title>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="http://ajax.aspnetcdn.com/ajax/knockout/knockout-3.4.2.js" type="text/javascript"></script>
     <!-- <script src="lib/jquery-3.3.1.js"></script> -->
     <script src="editor.js"></script>
 
@@ -54,17 +55,15 @@
   </head>
 
   <body>
-    <form action="overlay.html" method="GET">
-
     <fieldset>
       <div id="casters" class="box">
         <p class="aligned">
           <label class="relative" id="textlabel"> Caster 1 </label>
-          <input class="relative" name="caster1" id="caster1" type="text" placeholder="Caster 1">
+          <input class="relative" data-bind="text: caster1" id="caster1" type="text" placeholder="Caster 1">
         </p>
         <p class="aligned">
           <label class="relative" id="textlabel"> Caster 2 </label>
-          <input class="relative" name="caster2" id="caster2" type="text" placeholder="Caster 2">
+          <input class="relative" data-bind="text: caster2" id="caster2" type="text" placeholder="Caster 2">
         </p>
       </div>
     </fieldset>
@@ -75,72 +74,71 @@
     <div id="blueDiv" class="box">
       <p class="aligned">
         <label class="relative" id="textlabel"> Blue Team Name </label>
-        <input class="relative" name="blueName" id="blueName" type="text" placeholder="Blue Team Name">
+        <input class="relative" data-bind="text: blueName" id="blueName" type="text" placeholder="Blue Team Name">
       </p>
 
       <p class="aligned">
         <label class="relative" id="textlabel"> Blue Player 1 </label>
-        <input class="relative" name="blueP1" id="blueP1" type="text" placeholder="Blue Player 1">
+        <input class="relative" data-bind="text: blueP1" id="blueP1" type="text" placeholder="Blue Player 1">
       </p>
 
       <p class="aligned">
         <label class="relative" id="textlabel"> Blue Player 2 </label>
-        <input class="relative" name="blueP2" id="blueP2" type="text" placeholder="Blue Player 2">
+        <input class="relative" data-bind="text: blueP2" id="blueP2" type="text" placeholder="Blue Player 2">
       </p>
 
       <p class="aligned">
         <label class="relative" id="textlabel"> Blue Player 3 </label>
-        <input class="relative" name="blueP3" id="blueP3" type="text" placeholder="Blue Player 3">
+        <input class="relative" data-bind="text: blueP3" id="blueP3" type="text" placeholder="Blue Player 3">
       </p>
 
       <p class="aligned">
         <label class="relative" id="textlabel"> Blue Player 4 </label>
-        <input class="relative" name="blueP4" id="blueP4" type="text" placeholder="Blue Player 4">
+        <input class="relative" data-bind="text: blueP4" id="blueP4" type="text" placeholder="Blue Player 4">
       </p>
 
       <p class="aligned">
         <label class="relative" id="textlabel"> Blue Player 5 </label>
-        <input class="relative" name="blueP5" id="blueP5" type="text" placeholder="Blue Player 5">
+        <input class="relative" data-bind="text: blueP5" id="blueP5" type="text" placeholder="Blue Player 5">
       </p>
     </div>
   </fieldset>
 
     <br>
 
-    <fieldset>
-    <div id="orangeDiv" class="box">
-      <p class="aligned">
-        <label class="relative" id="textlabel"> Orange Team Name </label>
-        <input class="relative" name="orangeName" id="orangeName" type="text" placeholder="Orange Team Name">
-      </p>
+  <fieldset>
+  <div id="orangeDiv" class="box">
+    <p class="aligned">
+      <label class="relative" id="textlabel"> Orange Team Name </label>
+      <input class="relative" data-bind="text: orangeName" id="orangeName" type="text" placeholder="Orange Team Name">
+    </p>
 
-      <p class="aligned">
-        <label class="relative" id="textlabel"> Orange Player 1 </label>
-        <input class="relative" name="orangeP1" id="orangeP1" type="text" placeholder="Orange Player 1">
-      </p>
+    <p class="aligned">
+      <label class="relative" id="textlabel"> Orange Player 1 </label>
+      <input class="relative" data-bind="text: orangeP1" id="orangeP1" type="text" placeholder="Orange Player 1">
+    </p>
 
-      <p class="aligned">
-        <label class="relative" id="textlabel"> Orange Player 2 </label>
-        <input class="relative" name="orangeP2" id="orangeP2" type="text" placeholder="Orange Player 2">
-      </p>
+    <p class="aligned">
+      <label class="relative" id="textlabel"> Orange Player 2 </label>
+      <input class="relative" data-bind="text: orangeP2" id="orangeP2" type="text" placeholder="Orange Player 2">
+    </p>
 
-      <p class="aligned">
-        <label class="relative" id="textlabel"> Orange Player 3 </label>
-        <input class="relative" name="orangeP3" id="orangeP3" type="text" placeholder="Orange Player 3">
-      </p>
+    <p class="aligned">
+      <label class="relative" id="textlabel"> Orange Player 3 </label>
+      <input class="relative" data-bind="text: orangeP3" id="orangeP3" type="text" placeholder="Orange Player 3">
+    </p>
 
-      <p class="aligned">
-        <label class="relative" id="textlabel"> Orange Player 4 </label>
-        <input class="relative" name="orangeP4" id="orangeP4" type="text" placeholder="Orange Player 4">
-      </p>
+    <p class="aligned">
+      <label class="relative" id="textlabel"> Orange Player 4 </label>
+      <input class="relative" data-bind="text: orangeP4" id="orangeP4" type="text" placeholder="Orange Player 4">
+    </p>
 
-      <p class="aligned">
-        <label class="relative" id="textlabel"> Orange Player 5 </label>
-        <input class="relative" name="orangeP5" id="orangeP5" type="text" placeholder="Orange Player 5">
-      </p>
-    </div>
-  </fieldset>
+    <p class="aligned">
+      <label class="relative" id="textlabel"> Orange Player 5 </label>
+      <input class="relative" data-bind="text: orangeP5" id="orangeP5" type="text">
+    </p>
+  </div>
+</fieldset>
+
   <input id="submitButton" type="submit" value="Submit">
-
-  </form>
-  </body>
+</body>

@@ -3,18 +3,18 @@
   src: url('res/Uni Sans Heavy.otf');
 }
 
-label {
+span {
   font-family: 'Uni Sans Heavy';
   color: white;
   position: absolute;
 }
 
-label.teamName {
+span.teamName {
   font-size: 40px;
   left: 1530px;
 }
 
-label.player {
+span.player {
   font-size: 33px;
   left: 1530px;
 }

@@ -1,27 +1,16 @@
-$(document).ready(function() {
+$(function() {
   // Get all of the data from the Editor
   // And fill in all of the forms
 
-  var table = getUrlVars();
 
-  $("#caster1").text(table["caster1"]);
-  $("#caster2").text(table["caster2"]);
-
-  $("#blueName").text(table["blueName"]);
-  $("#blueP1").text(table["blueP1"]);
-  $("#blueP2").text(table["blueP2"]);
-  $("#blueP3").text(table["blueP3"]);
-  $("#blueP4").text(table["blueP4"]);
-  $("#blueP5").text(table["blueP5"]);
-
-  $("#orangeName").text(table["orangeName"]);
-  $("#orangeP1").text(table["orangeP1"]);
-  $("#orangeP2").text(table["orangeP2"]);
-  $("#orangeP3").text(table["orangeP3"]);
-  $("#orangeP4").text(table["orangeP4"]);
-  $("#orangeP5").text(table["orangeP5"]);
-
+  ko.applyBindings(c1ViewModel);
 });
+
+
+var c1ViewModel = {
+  caster1: ko.observable('BDawg'),
+  caster2: ko.observable('Greek Mech')
+}
 
 function getUrlVars()
 {
