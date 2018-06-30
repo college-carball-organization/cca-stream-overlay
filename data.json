@@ -1,4 +1,16 @@
 {
   "caster1": "Bdawg",
-  "caster2": "Xotic"
+  "caster2": "Xotic",
+  blueName: "Blue Name",
+  orangeName: "Orange Name",
+  blueP1: "Blue P1",
+  blueP2: "Blue P2",
+  blueP3: "Blue P3",
+  blueP4: "Blue P4",
+  blueP5: "Blue P5",
+  orangeP1, "Orange P1",
+  orangeP2, "Orange P2",
+  orangeP3, "Orange P3",
+  orangeP4, "Orange P4",
+  orangeP5, "Orange P5"
 }
