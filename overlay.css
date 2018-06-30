@@ -5,34 +5,33 @@
 
 span {
   font-family: 'Uni Sans Heavy';
-  color: white;
+  color: black;
   position: absolute;
 }
 
-span.teamName {
-  font-size: 40px;
-  left: 1530px;
-}
-
-span.player {
+span.blueTeam {
   font-size: 33px;
   left: 1530px;
 }
 
+span.orangeTeam {
+  font-size: 33px;
+}
+
 #caster1 {
   font-size: 65px;
-  left: 250px;
-  top: 785px;
+  left: 550px;
+  top: 700px;
 }
 
 #caster2 {
   font-size: 65px;
-  left: 880px;
-  top: 785px;
+  left: 1000px;
+  top: 700px;
 }
 
 #blueName {
-  top: 30px;
+  left: 100px;
 }
 
 #orangeName {
