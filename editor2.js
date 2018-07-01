@@ -5,6 +5,10 @@ var blueP3 = $("blueP3");
 var blueP4 = $("blueP4");
 var blueP5 = $("blueP5");
 
+$(document).ajaxError(function(event, jqxhr, settings, thrownError) {
+  console.log(thrownError);
+})
+
 $(document).ready(function() {
   $.getJSON("http://prod.collegecarball.net/cca-stream-overlay/data.json", function(data) {
     viewModel.caster1(data.caster1.name);
@@ -32,8 +36,8 @@ $(document).ready(function() {
     })
       .done(function() {
         alert("second success");
-      }).fail(function() {
-        alert("error");
+      }).fail(function(jqXHR, textStatus, errorThrown) {
+        alert("Error: " + jqXHR.responseText);
       })
   });
 
