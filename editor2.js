@@ -29,25 +29,16 @@ $(document).ready(function() {
 
     $.post("data.json", jsonData, function(returnedData) {
       console.log("Sucessfully saved JSON data");
-
-      success: function(msg) {
-        alert("the saving worked wtf");
-      }
-
-      error: function(XMLHTTPRequest, textStatus, errorThrown) {
-        alert("ERROR");
-        console.log(textStatus);
-      }
     })
+      .done(function() {
+        alert("second success");
+      }).fail(function() {
+        alert("error");
+      })
   });
 
   ko.applyBindings(viewModel);
 });
-
-// var observableArray = ko.observableArray([
-//   {caster1: "Bdawg"},
-//   {caster2: "Xotic"}
-// ])
 
 var viewModel = {
    // Default values for the fields?
