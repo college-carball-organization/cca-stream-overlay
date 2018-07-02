@@ -10,21 +10,21 @@ $(document).ajaxError(function(event, jqxhr, settings, thrownError) {
 })
 
 $(document).ready(function() {
-  $.getJSON("data.json", function(data) {
-    viewModel.caster1(data.caster1.name);
-    viewModel.caster2(data.caster2.name);
-    viewModel.blueName(data.blueName.name);
-    viewModel.blueP1(data.blueP1.name);
-    viewModel.blueP2(data.blueP2.name);
-    viewModel.blueP3(data.blueP3.name);
-    viewModel.blueP4(data.blueP4.name);
-    viewModel.blueP5(data.blueP5.name);
-    viewModel.orangeName(data.orangeName.name);
-    viewModel.orangeP1(data.orangeP1.name);
-    viewModel.orangeP2(data.orangeP2.name);
-    viewModel.orangeP3(data.orangeP3.name);
-    viewModel.orangeP4(data.orangeP4.name);
-    viewModel.orangeP5(data.orangeP5.name);
+  $.getJSON("http://prod.collegecarball.net/data.json", function(data) {
+    viewModel.caster1(data.caster1);
+    viewModel.caster2(data.caster2);
+    viewModel.blueName(data.blueName);
+    viewModel.blueP1(data.blueP1);
+    viewModel.blueP2(data.blueP2);
+    viewModel.blueP3(data.blueP3);
+    viewModel.blueP4(data.blueP4);
+    viewModel.blueP5(data.blueP5);
+    viewModel.orangeName(data.orangeName);
+    viewModel.orangeP1(data.orangeP1);
+    viewModel.orangeP2(data.orangeP2);
+    viewModel.orangeP3(data.orangeP3);
+    viewModel.orangeP4(data.orangeP4);
+    viewModel.orangeP5(data.orangeP5);
 
   })
 

@@ -11,11 +11,12 @@ span {
 
 span.blueTeam {
   font-size: 33px;
-  left: 1530px;
+  left: 60px;
 }
 
 span.orangeTeam {
   font-size: 33px;
+  left: 1490px;
 }
 
 #caster1 {
@@ -31,49 +32,51 @@ span.orangeTeam {
 }
 
 #blueName {
-  left: 100px;
+  top: 150px;
+  font-size: 50px;
 }
 
 #orangeName {
-  top: 597px;
+  top: 150px;
+  font-size: 50px;
 }
 
 #blueP1 {
-  top: 110px;
+  top: 260px;
 }
 
 #blueP2 {
-  top: 190px;
-}
-
-#blueP3 {
-  top: 265px;
-}
-
-#blueP4 {
   top: 340px;
 }
 
-#blueP5 {
+#blueP3 {
   top: 420px;
 }
 
+#blueP4 {
+  top: 500px;
+}
+
+#blueP5 {
+  top: 580px;
+}
+
 #orangeP1 {
-  top: 680px;
+  top: 260px;
 }
 
 #orangeP2 {
-  top: 760px;
+  top: 340px;
 }
 
 #orangeP3 {
-  top: 835px;
+  top: 420px;
 }
 
 #orangeP4 {
-  top: 910px;
+  top: 500px;
 }
 
 #orangeP5 {
-  top: 985px;
+  top: 580px;
 }
