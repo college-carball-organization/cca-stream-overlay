@@ -31,14 +31,26 @@ $(document).ready(function() {
   $("#submitButton").click(function() {
     var jsonData = ko.toJS(viewModel);
 
-    $.post("data.json", jsonData, function(returnedData) {
-      console.log("Sucessfully saved JSON data");
+    $.ajax({
+        type:"GET",
+        dataType: "json",
+        async: false,
+        url: "http://prod.collegecarball.net/testing/save_json.php",
+        data: jsonData,
+        success: function() {alert("Saved Successfully!"); },
+        failure: function(something) { alert("Error!"); }
     })
-      .done(function() {
-        alert("second success");
-      }).fail(function(jqXHR, textStatus, errorThrown) {
-        alert("Error: " + jqXHR.responseText);
-      })
+
+    // $.post("data.json", jsonData, function(returnedData) {
+    //   console.log("Sucessfully saved JSON data");
+    // })
+    //   .done(function() {
+    //     alert("second success");
+    //
+    //     console.log(jsonData);
+    //   }).fail(function(jqXHR, textStatus, errorThrown) {
+    //     alert("Error: " + jqXHR.responseText);
+    //   })
   });
 
   ko.applyBindings(viewModel);

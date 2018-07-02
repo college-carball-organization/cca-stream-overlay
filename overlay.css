@@ -5,28 +5,28 @@
 
 span {
   font-family: 'Uni Sans Heavy';
-  color: black;
+  color: #124755;
   position: absolute;
 }
 
 span.blueTeam {
-  font-size: 33px;
+  font-size: 42px;
   left: 60px;
 }
 
 span.orangeTeam {
-  font-size: 33px;
+  font-size: 42px;
   left: 1490px;
 }
 
 #caster1 {
-  font-size: 65px;
+  font-size: 42px;
   left: 550px;
   top: 700px;
 }
 
 #caster2 {
-  font-size: 65px;
+  font-size: 42px;
   left: 1000px;
   top: 700px;
 }
