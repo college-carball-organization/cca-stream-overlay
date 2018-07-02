@@ -19,7 +19,7 @@ $(function() {
   // Get all of the data from the Editor
   // And fill in all of the forms
 
-  $.getJSON("http://prod.collegecarball.net/data.json", function(data) {
+  $.getJSON("data.json", function(data) {
     viewModel.caster1(data.caster1);
     viewModel.caster2(data.caster2);
     viewModel.blueName(data.blueName);
