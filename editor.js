@@ -10,6 +10,7 @@ $(document).ajaxError(function(event, jqxhr, settings, thrownError) {
 })
 
 $(document).ready(function() {
+  //http://prod.collegecarball.net/testing/data.json
   $.getJSON("data.json", function(data) {
     viewModel.caster1(data.caster1);
     viewModel.caster2(data.caster2);
@@ -35,7 +36,7 @@ $(document).ready(function() {
         type:"GET",
         dataType: "json",
         async: false,
-        url: "http://prod.collegecarball.net/testing/save_json.php",
+        url: "http://prod.collegecarball.net/testing2/save_json.php",
         data: jsonData,
         success: function() {alert("Saved Successfully!"); },
         failure: function(something) { alert("Error!"); }
