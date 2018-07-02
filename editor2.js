@@ -10,7 +10,7 @@ $(document).ajaxError(function(event, jqxhr, settings, thrownError) {
 })
 
 $(document).ready(function() {
-  $.getJSON("http://prod.collegecarball.net/cca-stream-overlay/data.json", function(data) {
+  $.getJSON("/data.json", function(data) {
     viewModel.caster1(data.caster1.name);
     viewModel.caster2(data.caster2.name);
     viewModel.blueName(data.blueName.name);
@@ -31,7 +31,7 @@ $(document).ready(function() {
   $("#submitButton").click(function() {
     var jsonData = ko.toJS(viewModel);
 
-    $.post("data.json", jsonData, function(returnedData) {
+    $.post("/data.json", jsonData, function(returnedData) {
       console.log("Sucessfully saved JSON data");
     })
       .done(function() {

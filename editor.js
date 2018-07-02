@@ -5,8 +5,12 @@ var blueP3 = $("blueP3");
 var blueP4 = $("blueP4");
 var blueP5 = $("blueP5");
 
+$(document).ajaxError(function(event, jqxhr, settings, thrownError) {
+  console.log(thrownError);
+})
+
 $(document).ready(function() {
-  $.getJSON("http://prod.collegecarball.net/data.json", function(data) {
+  $.getJSON("/data.json", function(data) {
     viewModel.caster1(data.caster1.name);
     viewModel.caster2(data.caster2.name);
     viewModel.blueName(data.blueName.name);
@@ -27,18 +31,18 @@ $(document).ready(function() {
   $("#submitButton").click(function() {
     var jsonData = ko.toJS(viewModel);
 
-    $.post("data.json", data, function(returnedData) {
+    $.post("/data.json", jsonData, function(returnedData) {
       console.log("Sucessfully saved JSON data");
     })
+      .done(function() {
+        alert("second success");
+      }).fail(function(jqXHR, textStatus, errorThrown) {
+        alert("Error: " + jqXHR.responseText);
+      })
   });
 
   ko.applyBindings(viewModel);
 });
-
-// var observableArray = ko.observableArray([
-//   {caster1: "Bdawg"},
-//   {caster2: "Xotic"}
-// ])
 
 var viewModel = {
    // Default values for the fields?
