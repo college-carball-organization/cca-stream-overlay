@@ -14,9 +14,14 @@ var viewModel = {
    orangeP3: ko.observable("Orange Player 3"),
    orangeP4: ko.observable("Orange Player 4"),
    orangeP5: ko.observable("Orange Player 5"),
+
    bestOf: ko.observable(2),
    blueWins: ko.observable("0"),
-   orangeWins: ko.observable("0")
+   orangeWins: ko.observable("0"),
+   bluePrimary: ko.observable("#000000"),
+   blueSecondary: ko.observable("#000000"),
+   orangePrimary: ko.observable("#000000"),
+   orangeSecondary: ko.observable("#000000")
 }
 
 $(document).ready(function() {
@@ -40,6 +45,10 @@ $(document).ready(function() {
   $.getJSON("scoreboardData.json", function(data) {
     viewModel.blueName(data.blueName);
     viewModel.orangeName(data.orangeName);
+    viewModel.bluePrimary(data.bluePrimary);
+    viewModel.blueSecondary(data.blueSecondary);
+    viewModel.orangePrimary(data.orangePrimary);
+    viewModel.orangeSecondary(data.orangeSecondary);
     viewModel.bestOf(data.bestOf);
     viewModel.blueWins(data.blueWins);
     viewModel.orangeWins(data.orangeWins);

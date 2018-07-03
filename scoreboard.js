@@ -1,6 +1,6 @@
 var viewModel = {
   blueName: ko.observable("Blue Name"),
-  orangeName: ko.observable("Orange Name")
+  orangeName: ko.observable("Orange Name"),
 }
 
 $(document).ready(function() {
@@ -15,9 +15,10 @@ $(document).ready(function() {
     showBlueTicks(data.blueWins);
     showOrangeTicks(data.orangeWins);
 
-    $('#divBluePrimary').css("border", (data.bluePrimary, "transparent transparent transparent"));
+    // Set team colors
+    $('#divBluePrimary').css("border-top-color", data.bluePrimary);
     $('#divBlueSecondary').css("border-bottom-color", data.blueSecondary);
-    $('#divOrangePrimary').css("border", (data.orangePrimary, "transparent transparent transparent"));
+    $('#divOrangePrimary').css("border-top-color", data.orangePrimary);
     $('#divOrangeSecondary').css("border-bottom-color", data.orangeSecondary);
   });
 
