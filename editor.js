@@ -30,7 +30,7 @@ $(document).ready(function() {
   })
 
   $("#submitButton").click(function() {
-    var jsonData = ko.toJS(viewModel);
+    var jsonData = ko.toJSON(viewModel);
 
     $.ajax({
         type:"GET",
