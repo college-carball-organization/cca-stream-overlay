@@ -1,0 +1,73 @@
+@font-face {
+  font-family: 'Uni Sans Heavy';
+  src: url('res/Uni Sans Heavy.otf');
+}
+
+div {
+  position: relative;
+  font-size: 56px;
+}
+
+span {
+  font-family: 'Uni Sans Heavy';
+  color: #124755;
+}
+
+#divBlueName {
+  text-align: center;
+  left: 123px;
+  top: 491px;
+  width: 446px;
+  height: 83px;
+  line-height: 83px;
+}
+
+#divOrangeName {
+  text-align: center;
+  left: 1273px;
+  top: 491px;
+  width: 446px;
+  height: 83px;
+  line-height: 83px;
+}
+
+#divBluePrimary {
+  left: 569px;
+  top: 491px;
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 100px 100px 0 0;
+  border-color: transparent transparent transparent transparent;
+  border-top-color: #007bff;
+}
+
+#divBlueSecondary {
+  left: 569px;
+  top: 491px;
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 0 0 100px 100px;
+  border-color: transparent transparent #fff200 transparent;
+}
+
+#divOrangePrimary {
+  left: 1719px;
+  top: 491px;
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 100px 100px 0 0;
+  border-color: #007bff transparent transparent transparent;
+}
+
+#divOrangeSecondary {
+  left: 1719px;
+  top: 491px;
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 0 0 100px 100px;
+  border-color: transparent transparent #fff200 transparent;
+}
