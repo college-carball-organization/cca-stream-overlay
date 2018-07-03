@@ -18,7 +18,6 @@ var viewModel = {
 $(function() {
   // Get all of the data from the Editor
   // And fill in all of the forms
-  //http://prod.collegecarball.net/testing/data.json
   $.getJSON("data.json", function(data) {
     console.log("Data: " + data);
     viewModel.caster1(data.caster1);
@@ -36,7 +35,7 @@ $(function() {
     viewModel.orangeP3(data.orangeP3);
     viewModel.orangeP4(data.orangeP4);
     viewModel.orangeP5(data.orangeP5);
-  })
+  });
 
   ko.applyBindings(viewModel);
 });

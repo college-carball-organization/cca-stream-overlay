@@ -1,0 +1,50 @@
+@font-face {
+  font-family: 'Uni Sans Heavy';
+  src: url('Uni Sans Heavy.otf');
+}
+
+.grid-container {
+  display: grid;
+  grid: auto / auto auto auto;
+  grid-gap: 0px;
+  padding: 10px;
+}
+
+fieldset {
+  width: 400px;
+}
+
+div.box {
+  flex-wrap: wrap;
+  flex-direction: column;
+  width: 600px;
+  align-content: space-between;
+}
+
+p.aligned {
+  padding: 0px 0px;
+  margin: 0px 0px;
+}
+
+input[type=text] {
+  top: 40px;
+  width: 30%;
+  padding: 12px 20px;
+  margin: 8px 0px;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+#textlabel {
+  padding: 12px 10px;
+}
+
+select {
+  padding: 5px 12px;
+  margin: 3px 0px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}

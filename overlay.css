@@ -8,6 +8,11 @@ div {
   font-size: 42px;
 }
 
+span {
+  font-family: 'Uni Sans Heavy';
+  color: #124755;
+}
+
 #divCaster1 {
   text-align: center;
   left: 499px;
@@ -132,9 +137,4 @@ div {
   width: 404px;
   height: 61px;
   line-height: 61px;
-}
-
-span {
-  font-family: 'Uni Sans Heavy';
-  color: #124755;
 }
