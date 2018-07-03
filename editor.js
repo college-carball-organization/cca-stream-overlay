@@ -43,7 +43,7 @@ $(document).ready(function() {
         error: function(request, status, error) {
           console.log(error);
           alert("ERROR!");
-        }
+        },
         failure: function(something) { alert("Error!"); }
     }).done(function() {
       alert("Done AJAX");
