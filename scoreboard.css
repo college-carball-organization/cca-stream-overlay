@@ -13,10 +13,8 @@ span {
   color: #124755;
 }
 
-
-
 #divBlueName {
-  text-align:center;
+  text-align: center;
   left: 62px;
   top: 100px;
   width: 235px;
@@ -31,4 +29,44 @@ span {
   width: 235px;
   height: 44px;
   line-height: 44px;
+}
+
+#divBluePrimary {
+  left: 302px;
+  top: 100px;
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 53px 53px 0 0;
+  border-color: #007bff transparent transparent transparent;
+}
+
+#divBlueSecondary {
+  left: 302px;
+  top: 100px;
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 0 0 53px 53px;
+  border-color: transparent transparent #fff200 transparent;
+}
+
+#divOrangePrimary {
+  left: 302px;
+  top: 159px;
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 53px 53px 0 0;
+  border-color: #007bff transparent transparent transparent;
+}
+
+#divOrangeSecondary {
+  left: 302px;
+  top: 159px;
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 0 0 53px 53px;
+  border-color: transparent transparent #fff200 transparent;
 }

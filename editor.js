@@ -14,9 +14,9 @@ var viewModel = {
    orangeP3: ko.observable("Orange Player 3"),
    orangeP4: ko.observable("Orange Player 4"),
    orangeP5: ko.observable("Orange Player 5"),
-   bestOf: ko.observable(3),
-   blueWins: ko.observable(0),
-   orangeWins: ko.observable(0)
+   bestOf: ko.observable(2),
+   blueWins: ko.observable("0"),
+   orangeWins: ko.observable("0")
 }
 
 $(document).ready(function() {
@@ -37,10 +37,14 @@ $(document).ready(function() {
     viewModel.orangeP5(data.orangeP5);
   })
 
-  $.getJSON("scoreboardData.json", function(data) {
+  $.getJSON("scoreboard.json", function(data) {
+    viewModel.blueName(data.blueName);
+    viewModel.orangeName(data.orangeName);
     viewModel.bestOf(data.bestOf);
     viewModel.blueWins(data.blueWins);
     viewModel.orangeWins(data.orangeWins);
+
+    console.log(data.orangeWins, " ", data.blueWins, " ", data.bestOf);
   })
 
   ko.applyBindings(viewModel);

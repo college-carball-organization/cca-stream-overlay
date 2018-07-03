@@ -4,26 +4,22 @@ var viewModel = {
 }
 
 $(document).ready(function() {
-  var bestOf = 5;
-  var blueWins = 2;
-  var orangeWins = 2;
-
   // Retrieve the scoreboard data file
-  $.getJSON("scoreboardData.json", function(data) {
+  $.getJSON("scoreboard.json", function(data) {
     // Set the team names from the data file
     viewModel.blueName(data.blueName);
     viewModel.orangeName(data.orangeName);
 
     // Set the appropriate series length and # of wins for both team from the data file
-    bestOf = data.bestOf;
-    blueWins = data.blueWins;
-    orangeWins = data.orangeWins;
+    showBestOf(data.bestOf);
+    showBlueTicks(data.blueWins);
+    showOrangeTicks(data.orangeWins);
+
+    $('#divBluePrimary').css("border", (data.bluePrimary, "transparent transparent transparent"));
+    $('#divBlueSecondary').css("border-bottom-color", data.blueSecondary);
+    $('#divOrangePrimary').css("border", (data.orangePrimary, "transparent transparent transparent"));
+    $('#divOrangeSecondary').css("border-bottom-color", data.orangeSecondary);
   });
-
-
-  showBestOf(bestOf);
-  showBlueTicks(blueWins);
-  showOrangeTicks(orangeWins);
 
   ko.applyBindings(viewModel);
 });
@@ -40,14 +36,14 @@ function showBestOf(bestOf) {
   bo7.hide();
 
   switch (bestOf) {
-    case 3:
+    case "3":
       bo3.show();
       console.log("Best of 3");
       break;
-    case 5:
+    case "5":
       bo5.show();
       break;
-    case 7:
+    case "7":
       bo7.show();
       console.log("Best of 7");
       break;
@@ -66,18 +62,18 @@ function showBlueTicks(wins) {
   blue4.hide();
 
   switch (wins) {
-    case 0:
+    case "0":
       break;
-    case 1:
+    case "1":
       blue1.show();
       break;
-    case 2:
+    case "2":
       blue2.show();
       break;
-    case 3:
+    case "3":
       blue3.show();
       break;
-    case 4:
+    case "4":
       blue4.show();
       break;
   }
@@ -95,18 +91,18 @@ function showOrangeTicks(wins) {
   orange4.hide();
 
   switch (wins) {
-    case 0:
+    case "0":
       break;
-    case 1:
+    case "1":
       orange1.show();
       break;
-    case 2:
+    case "2":
       orange2.show();
       break;
-    case 3:
+    case "3":
       orange3.show();
       break;
-    case 4:
+    case "4":
       orange4.show();
       break;
   }
