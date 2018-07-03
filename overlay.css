@@ -4,20 +4,134 @@
 }
 
 div {
-  text-align:center
-  position: absolute;
+  position: relative;
+  font-size: 42px;
 }
 
 #divCaster1 {
-  left: 550px;
-  top: 700px;
-  width: 200px;
+  text-align: center;
+  left: 499px;
+  top: 712px;
+  width: 456px;
+  height: 61px;
+  line-height: 61px;
 }
 
 #divCaster2 {
-  left: 1000px;
-  top: 700px;
-  width: 200px;
+  text-align: center;
+  left: 965px;
+  top: 712px;
+  width: 456px;
+  height: 61px;
+  line-height: 61px;
+}
+
+#divBlueName {
+  text-align: center;
+  left: 55px;
+  top: 155px;
+  width: 320px;
+  height: 61px;
+  line-height: 61px;
+}
+
+#divBlueP1 {
+  text-align: center;
+  left: 55px;
+  top: 237px;
+  width: 404px;
+  height: 61px;
+  line-height: 61px;
+}
+
+#divBlueP2 {
+  text-align: center;
+  left: 55px;
+  top: 319px;
+  width: 404px;
+  height: 61px;
+  line-height: 61px;
+}
+
+#divBlueP3 {
+  text-align: center;
+  left: 55px;
+  top: 401px;
+  width: 404px;
+  height: 61px;
+  line-height: 61px;
+}
+
+#divBlueP4 {
+  text-align: center;
+  left: 55px;
+  top: 483px;
+  width: 404px;
+  height: 61px;
+  line-height: 61px;
+}
+
+#divBlueP5 {
+  text-align: center;
+  left: 55px;
+  top: 565px;
+  width: 404px;
+  height: 61px;
+  line-height: 61px;
+}
+
+#divOrangeName {
+  text-align: center;
+  left: 1478px;
+  top: 155px;
+  width: 320px;
+  height: 61px;
+  line-height: 61px;
+}
+
+#divOrangeP1 {
+  text-align: center;
+  left: 1478px;
+  top: 237px;
+  width: 404px;
+  height: 61px;
+  line-height: 61px;
+}
+
+#divOrangeP2 {
+  text-align: center;
+  left: 1478px;
+  top: 319px;
+  width: 404px;
+  height: 61px;
+  line-height: 61px;
+}
+
+#divOrangeP3 {
+  text-align: center;
+  left: 1478px;
+  top: 401px;
+  width: 404px;
+  height: 61px;
+  line-height: 61px;
+}
+
+#divOrangeP4 {
+  text-align: center;
+  left: 1478px;
+  top: 483px;
+  width: 404px;
+  height: 61px;
+  line-height: 61px;
+}
+
+#divOrangeP5 {
+  text-align: center;
+  left: 1478px;
+  top: 565px;
+  width: 404px;
+  height: 61px;
+  line-height: 61px;
 }
 
 span {
