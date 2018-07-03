@@ -37,7 +37,7 @@ $(document).ready(function() {
     viewModel.orangeP5(data.orangeP5);
   })
 
-  $.getJSON("scoreboard.json", function(data) {
+  $.getJSON("scoreboardData.json", function(data) {
     viewModel.bestOf(data.bestOf);
     viewModel.blueWins(data.blueWins);
     viewModel.orangeWins(data.orangeWins);

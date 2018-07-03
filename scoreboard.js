@@ -9,7 +9,7 @@ $(document).ready(function() {
   var orangeWins = 2;
 
   // Retrieve the scoreboard data file
-  $.getJSON("scoreboard.json", function(data) {
+  $.getJSON("scoreboardData.json", function(data) {
     // Set the team names from the data file
     viewModel.blueName(data.blueName);
     viewModel.orangeName(data.orangeName);

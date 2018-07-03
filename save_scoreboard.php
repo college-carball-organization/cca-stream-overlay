@@ -1,7 +1,11 @@
 <?php
-  $myFile = "scoreboard.json"
+  <?php phpinfo(); ?>
+
+  $myFile = "scoreboardData.json"
 
   try {
+    $myObj->blueName = $_POST['blueName'];
+    $myObj->orangeName = $_POST['orangeName'];
     $myObj->bestOf = $_POST['bestOf'];
     $myObj->blueWins = $_POST['blueWins'];
     $myObj->orangeWins = $_POST['orangeWins'];
