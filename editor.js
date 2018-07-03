@@ -49,7 +49,7 @@ $(document).ready(function() {
     viewModel.bestOf(data.bestOf);
     viewModel.blueWins(data.blueWins);
     viewModel.orangeWins(data.orangeWins);
-    viewModel.tickerText(data.tickerText);
+    viewModel.tickerText(data.tickerText)
   })
 
   ko.applyBindings(viewModel);
