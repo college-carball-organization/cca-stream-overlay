@@ -1,8 +1,6 @@
 <?php
   $myFile = "scoreboardData.json";
 
-  <?php phpinfo(); ?>
-
   try {
     $myObj->blueName = $_POST['blueName'];
     $myObj->orangeName = $_POST['orangeName'];
