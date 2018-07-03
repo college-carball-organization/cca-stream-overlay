@@ -10,9 +10,9 @@
   padding: 10px;
 }
 
-fieldset {
+/* fieldset {
   width: 400px;
-}
+} */
 
 div.box {
   flex-wrap: wrap;

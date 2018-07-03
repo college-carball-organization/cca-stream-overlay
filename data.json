@@ -12,5 +12,12 @@
   "orangeP2": "Orange P2",
   "orangeP3": "Orange P3",
   "orangeP4": "Orange P4",
-  "orangeP5": "Orange P5"
+  "orangeP5": "Orange P5",
+  "bestOf" : "3",
+  "blueWins" : "0",
+  "orangeWins" : "0",
+  "bluePrimary" : "#0F00FF",
+  "blueSecondary" : "#000000",
+  "orangePrimary" : "#FF8B00",
+  "orangeSecondary" : "#000000"
 }

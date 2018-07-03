@@ -14,10 +14,10 @@
 </head>
 
 <body>
-  <div class="grid-container">
-    <form action="save_casteroverlay.php" method="POST">
-
+  <form action="save_casteroverlay.php" method="POST">
+    <div class="grid-container">
       <fieldset>
+
         <div id="casters" class="box">
           <p class="aligned">
             <label class="relative" id="textlabel"> Caster 1 </label>
@@ -96,24 +96,10 @@
             <input class="relative" data-bind="value: orangeP5" id="orangeP5" type="text" name="orangeP5">
           </p>
         </div>
-
-        <input id="submitButton" type="submit" value="Submit">
       </fieldset>
-    </form>
 
-    <form action="save_scoreboard.php" method="POST">
       <fieldset>
-        <div class="">
-          <p>
-            <label> Blue Team Name: </label>
-            <input data-bind="value: blueName" id="blueName" type="text" name="blueName">
-          </p>
-
-          <p>
-            <label> Orange Team Name: </label>
-            <input data-bind="value: orangeName" id="orangeName" type="text" name="orangeName">
-          </p>
-
+        <div class="scoreboard">
           <p>
             <label> Blue Team Colors </label>
             <input data-bind="value: bluePrimary" id="bluePrimary" type="text" name="bluePrimary" placeholder="Primary">
@@ -129,35 +115,36 @@
           <p>
             <label id="textLabel"> Best of: </label>
             <select id="bestOf" data-bind: "value: bestOf" name="bestOf">
-              <option value="3">3</option>
-              <option value="5">5</option>
-              <option value="7">7</option>
-            </select>
+                <option value="3">3</option>
+                <option value="5">5</option>
+                <option value="7">7</option>
+              </select>
           </p>
           <p>
             <label id="textLabel">Blue Wins: </label>
             <select id="blueWins" data-bind: "value: blueWins" name="blueWins">
-              <option value="0">0</option>
-              <option value="1">1</option>
-              <option value="2">2</option>
-              <option value="3">3</option>
-              <option value="4">4</option>
-            </select>
+                <option value="0">0</option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+              </select>
           </p>
           <p>
             <label id="textLabel">Orange Wins: </label>
             <select id="orangeWins" data-bind: "value: orangeWins" name="orangeWins">
-              <option value="0">0</option>
-              <option value="1">1</option>
-              <option value="2">2</option>
-              <option value="3">3</option>
-              <option value="4">4</option>
-            </select>
+                <option value="0">0</option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+              </select>
           </p>
 
+          <input id="submitButton" type="submit" value="Submit">
+
         </div>
-        <input id="submitButton" type="submit" value="Submit">
       </fieldset>
-    </form>
-  </div>
+    </div>
+  </form>
 </body>

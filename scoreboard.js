@@ -5,7 +5,7 @@ var viewModel = {
 
 $(document).ready(function() {
   // Retrieve the scoreboard data file
-  $.getJSON("scoreboardData.json", function(data) {
+  $.getJSON("data.json", function(data) {
     // Set the team names from the data file
     viewModel.blueName(data.blueName);
     viewModel.orangeName(data.orangeName);

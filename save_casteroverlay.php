@@ -18,6 +18,14 @@
     $myObj->orangeP4 = $_POST['orangeP4'];
     $myObj->orangeP5 = $_POST['orangeP5'];
 
+    $myObj->bluePrimary = $_POST['bluePrimary'];
+    $myObj->blueSecondary = $_POST['blueSecondary'];
+    $myObj->orangePrimary = $_POST['orangePrimary'];
+    $myObj->orangeSecondary = $_POST['orangeSecondary'];
+    $myObj->bestOf = $_POST['bestOf'];
+    $myObj->blueWins = $_POST['blueWins'];
+    $myObj->orangeWins = $_POST['orangeWins'];
+
     $myJSON = json_encode($myObj);
 
     // Write json data into data.json file

@@ -40,11 +40,7 @@ $(document).ready(function() {
     viewModel.orangeP3(data.orangeP3);
     viewModel.orangeP4(data.orangeP4);
     viewModel.orangeP5(data.orangeP5);
-  })
 
-  $.getJSON("scoreboardData.json", function(data) {
-    viewModel.blueName(data.blueName);
-    viewModel.orangeName(data.orangeName);
     viewModel.bluePrimary(data.bluePrimary);
     viewModel.blueSecondary(data.blueSecondary);
     viewModel.orangePrimary(data.orangePrimary);
@@ -52,8 +48,6 @@ $(document).ready(function() {
     viewModel.bestOf(data.bestOf);
     viewModel.blueWins(data.blueWins);
     viewModel.orangeWins(data.orangeWins);
-
-    console.log(data.orangeWins, " ", data.blueWins, " ", data.bestOf);
   })
 
   ko.applyBindings(viewModel);
