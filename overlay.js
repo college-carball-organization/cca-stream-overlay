@@ -19,7 +19,8 @@ $(function() {
   // Get all of the data from the Editor
   // And fill in all of the forms
   //http://prod.collegecarball.net/testing/data.json
-  $.getJSON("data.json", function(data) {
+  $.getJSON("http://prod.collegecarball.net/testing2/data.json", function(data) {
+    console.log("Data: " + data);
     viewModel.caster1(data.caster1);
     viewModel.caster2(data.caster2);
     viewModel.blueName(data.blueName);
