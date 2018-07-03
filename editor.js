@@ -31,15 +31,18 @@ $(document).ready(function() {
 
   $("#submitButton").click(function() {
     var jsonData = ko.toJSON(viewModel);
+    console.log(jsonData);
 
     $.ajax({
-        type:"GET",
+        type:"POST",
         dataType: "json",
         async: false,
         url: "save_json.php",
         data: jsonData,
         success: function() {alert("Saved Successfully!"); },
         failure: function(something) { alert("Error!"); }
+    }).done(function() {
+      alert("Done AJAX");
     })
 
     // $.post("data.json", jsonData, function(returnedData) {
