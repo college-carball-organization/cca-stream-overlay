@@ -21,10 +21,12 @@
     );
 
     // Get data from existing json file
-    $jsondata = file_get_contents($myFile);
+    //$jsondata = file_get_contents($myFile);
 
     // converts json data into array
-    $arr_data = json_decode($jsondata, true);
+    //$arr_data = json_decode($jsondata, true);
+
+    $arr_data = [];
 
     // Push user data to array
     array_push($arr_data, $formdata);
