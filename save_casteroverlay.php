@@ -25,6 +25,7 @@
     $myObj->bestOf = $_POST['bestOf'];
     $myObj->blueWins = $_POST['blueWins'];
     $myObj->orangeWins = $_POST['orangeWins'];
+    $myObj->tickerText = $_POST['tickerText'];
 
     $myJSON = json_encode($myObj);
 
