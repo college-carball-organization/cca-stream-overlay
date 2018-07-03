@@ -14,9 +14,9 @@ var viewModel = {
    orangeP3: ko.observable("Orange Player 3"),
    orangeP4: ko.observable("Orange Player 4"),
    orangeP5: ko.observable("Orange Player 5"),
-   bestOf: ko.observable(3);
+   bestOf: ko.observable(3),
    blueWins: ko.observable(0),
-   orangeWins: ko.observable(0);
+   orangeWins: ko.observable(0)
 }
 
 $(document).ready(function() {
