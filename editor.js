@@ -22,7 +22,7 @@ var viewModel = {
    blueSecondary: ko.observable("#000000"),
    orangePrimary: ko.observable("#000000"),
    orangeSecondary: ko.observable("#000000"),
-   tickerText: ko.observable("Ticker text");
+   tickerText: ko.observable("Ticker text")
 }
 
 $(document).ready(function() {
@@ -49,7 +49,7 @@ $(document).ready(function() {
     viewModel.bestOf(data.bestOf);
     viewModel.blueWins(data.blueWins);
     viewModel.orangeWins(data.orangeWins);
-    viewModel.tickerText(data.tickerText)
+    viewModel.tickerText(data.tickerText);
   })
 
   ko.applyBindings(viewModel);
