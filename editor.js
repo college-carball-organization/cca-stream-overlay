@@ -35,15 +35,19 @@ $(document).ready(function() {
 
     $.ajax({
         type:"POST",
-        dataType: "json",
+        dataType: "html",
         async: false,
         url: "save_json.php",
-        data: jsonData,
+        data: {data: jsonData},
         success: function() {alert("Saved Successfully!"); },
+        error: function(request, status, error) {
+          console.log(error);
+          alert("ERROR!");
+        }
         failure: function(something) { alert("Error!"); }
     }).done(function() {
       alert("Done AJAX");
-    })
+    });
 
     // $.post("data.json", jsonData, function(returnedData) {
     //   console.log("Sucessfully saved JSON data");
