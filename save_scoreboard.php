@@ -1,7 +1,7 @@
 <?php
-  <?php phpinfo(); ?>
+  $myFile = "scoreboardData.json";
 
-  $myFile = "scoreboardData.json"
+  <?php phpinfo(); ?>
 
   try {
     $myObj->blueName = $_POST['blueName'];
