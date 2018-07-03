@@ -36,7 +36,7 @@ $(document).ready(function() {
         type:"GET",
         dataType: "json",
         async: false,
-        url: "http://prod.collegecarball.net/testing2/save_json.php",
+        url: "save_json.php",
         data: jsonData,
         success: function() {alert("Saved Successfully!"); },
         failure: function(something) { alert("Error!"); }
