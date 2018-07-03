@@ -13,6 +13,46 @@ span {
   color: #124755;
 }
 
+#divBluePrimary {
+  left: 385px;
+  top: 155px;
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 53px 53px 0 0;
+  border-color: #007bff transparent transparent transparent;
+}
+
+#divBlueSecondary {
+  left: 385px;
+  top: 155px;
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 0 0 53px 53px;
+  border-color: transparent transparent #007bff transparent;
+}
+
+#divOrangePrimary {
+  left: 1808px;
+  top: 155px;
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 53px 53px 0 0;
+  border-color: #007bff transparent transparent transparent;
+}
+
+#divOrangeSecondary {
+  left: 1808px;
+  top: 155px;
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 0 0 53px 53px;
+  border-color: transparent transparent #007bff transparent;
+}
+
 #divCaster1 {
   text-align: center;
   left: 499px;

@@ -35,6 +35,11 @@ $(function() {
     viewModel.orangeP3(data.orangeP3);
     viewModel.orangeP4(data.orangeP4);
     viewModel.orangeP5(data.orangeP5);
+
+    $('#divBluePrimary').css("border-top-color", data.bluePrimary);
+    $('#divBlueSecondary').css("border-bottom-color", data.blueSecondary);
+    $('#divOrangePrimary').css("border-top-color", data.orangePrimary);
+    $('#divOrangeSecondary').css("border-bottom-color", data.orangeSecondary);
   });
 
   ko.applyBindings(viewModel);
