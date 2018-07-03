@@ -15,8 +15,8 @@ var viewModel = {
    orangeP4: ko.observable("Orange Player 4"),
    orangeP5: ko.observable("Orange Player 5"),
 
-   bestOf: ko.observable(2),
-   blueWins: ko.observable("0"),
+   bestOf: ko.observable(),
+   blueWins: ko.observable("3"),
    orangeWins: ko.observable("0"),
    bluePrimary: ko.observable("#000000"),
    blueSecondary: ko.observable("#000000"),

@@ -38,7 +38,8 @@ span {
   height: 0;
   border-style: solid;
   border-width: 53px 53px 0 0;
-  border-color: #007bff transparent transparent transparent;
+  border-color: transparent transparent transparent transparent;
+  border-top-color: #007bff;
 }
 
 #divBlueSecondary {
