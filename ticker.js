@@ -1,5 +1,5 @@
 var viewModel = {
-  tickerText: ko.observable("There should be more text here"),
+  tickerText: ko.observable("NEU 1 - OSU 2: Game 4  |  LSU 0 - TAMU A 3: Final  |  Follow us on Twitter at @CollegeCarball  |  Soopy Sucks  |"),
 }
 
 $(document).ready(function() {
