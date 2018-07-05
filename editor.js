@@ -54,14 +54,4 @@ $(document).ready(function() {
 
   ko.applyBindings(viewModel);
 
-  $('#submitButton').submit(function(e) {
-
-    $.post("save_data.php", data)
-    .done(function(response) {
-      alert("Done uploading data!");
-    })
-    .fail( function() {
-      alert("Request failed");
-    })
-  });
 });
