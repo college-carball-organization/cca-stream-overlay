@@ -7,6 +7,11 @@ $(document).ready(function() {
   $.getJSON("data.json", function(data) {
     // Set the team names from the data file
     viewModel.tickerText(data.tickerText);
+
+    var tickerSpeed = data.tickerSpeed;
+
+    $(".marquee").css("animation-duration", (tickerSpeed.toString() + "s"))
+    $(".marquee2").css("animation-delay", ((tickerSpeed / 2).toString() + "s"))
   });
 
   ko.applyBindings(viewModel);

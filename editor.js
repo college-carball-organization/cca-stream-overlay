@@ -24,6 +24,7 @@ var viewModel = {
    blueSecondary: ko.observable("#000000"),
    orangePrimary: ko.observable("#000000"),
    orangeSecondary: ko.observable("#000000"),
+   tickerSpeed: ko.observable(20),
    tickerText: ko.observable("Ticker text")
 }
 

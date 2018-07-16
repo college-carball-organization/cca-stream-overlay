@@ -122,19 +122,19 @@
           </p>
           <p>
             <label id="textLabel">Blue Wins: </label>
-            <select id="blueWins" data-bind= "options: blueWins, value: selectedBlueWins" name="blueWins">
-
-              </select>
+            <select id="blueWins" data-bind= "options: blueWins, value: selectedBlueWins" name="blueWins"></select>
           </p>
           <p>
             <label id="textLabel">Orange Wins: </label>
-            <select id="orangeWins" data-bind= "options: orangeWins, value: selectedOrangeWins" name="orangeWins">
-
-              </select>
+            <select id="orangeWins" data-bind= "options: orangeWins, value: selectedOrangeWins" name="orangeWins"></select>
           </p>
           <p>
             <label>Ticker text</label>
-            <input data-bind="text: tickerText" type="text" id="tickerText" name="tickerText">
+            <input data-bind="value: tickerText" type="text" id="tickerText" name="tickerText">
+          </p>
+          <p>
+            <label id="textLabel">Ticker Speed: </label>
+            <input data-bind="value: tickerSpeed" id="tickerSpeed" type="text" name="tickerSpeed" placeholder="0">
           </p>
 
           <input id="submitButton" type="submit" value="Submit">
