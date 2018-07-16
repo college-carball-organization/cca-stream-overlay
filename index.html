@@ -122,22 +122,14 @@
           </p>
           <p>
             <label id="textLabel">Blue Wins: </label>
-            <select id="blueWins" data-bind: "value: blueWins" name="blueWins">
-                <option value="0">0</option>
-                <option value="1">1</option>
-                <option value="2">2</option>
-                <option value="3">3</option>
-                <option value="4">4</option>
+            <select id="blueWins" data-bind= "options: blueWins, value: selectedBlueWins" name="blueWins">
+
               </select>
           </p>
           <p>
             <label id="textLabel">Orange Wins: </label>
-            <select id="orangeWins" data-bind: "value: orangeWins" name="orangeWins">
-                <option value="0">0</option>
-                <option value="1">1</option>
-                <option value="2">2</option>
-                <option value="3">3</option>
-                <option value="4">4</option>
+            <select id="orangeWins" data-bind= "options: orangeWins, value: selectedOrangeWins" name="orangeWins">
+
               </select>
           </p>
           <p>

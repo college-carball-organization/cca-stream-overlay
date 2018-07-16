@@ -16,8 +16,10 @@ var viewModel = {
    orangeP5: ko.observable("Orange Player 5"),
 
    bestOf: ko.observable(),
-   blueWins: ko.observable("3"),
-   orangeWins: ko.observable("0"),
+   blueWins: ko.observableArray([0, 1, 2, 3,4]),
+   selectedBlueWins: ko.observable(),
+   orangeWins: ko.observableArray([0, 1, 2, 3, 4]),
+   selectedOrangeWins: ko.observable(),
    bluePrimary: ko.observable("#000000"),
    blueSecondary: ko.observable("#000000"),
    orangePrimary: ko.observable("#000000"),
@@ -47,8 +49,8 @@ $(document).ready(function() {
     viewModel.orangePrimary(data.orangePrimary);
     viewModel.orangeSecondary(data.orangeSecondary);
     viewModel.bestOf(data.bestOf);
-    viewModel.blueWins(data.blueWins);
-    viewModel.orangeWins(data.orangeWins);
+    viewModel.selectedBlueWins(data.blueWins);
+    viewModel.selectedOrangeWins(data.orangeWins);
     viewModel.tickerText(data.tickerText);
   })
 
