@@ -71,3 +71,19 @@ span {
   border-width: 0 0 53px 53px;
   border-color: transparent transparent #fff200 transparent;
 }
+
+#blueTeamPrimary {
+  left: 55px;
+  top: 100px;
+  width: 6px;
+  height: 53px;
+  background-color: white;
+}
+
+#orangeTeamPrimary {
+  left: 55px;
+  top: 159px;
+  width: 6px;
+  height: 53px;
+  background-color: white;
+}

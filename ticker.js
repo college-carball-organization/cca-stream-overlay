@@ -6,7 +6,7 @@ $(document).ready(function() {
   // Retrieve the scoreboard data file
   $.getJSON("data.json", function(data) {
     // Set the team names from the data file
-    viewModel.tickerText(data.tickerText);
+    viewModel.tickerText(data.tickerText + "  ");
 
     var tickerDuration = data.tickerDuration;
 
