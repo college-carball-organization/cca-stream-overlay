@@ -53,6 +53,7 @@ $(document).ready(function() {
     viewModel.selectedBlueWins(data.blueWins);
     viewModel.selectedOrangeWins(data.orangeWins);
     viewModel.tickerText(data.tickerText);
+    viewModel.tickerSpeed(data.tickerSpeed);
   })
 
   ko.applyBindings(viewModel);
