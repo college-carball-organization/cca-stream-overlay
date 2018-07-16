@@ -8,10 +8,11 @@ $(document).ready(function() {
     // Set the team names from the data file
     viewModel.tickerText(data.tickerText);
 
-    var tickerSpeed = data.tickerSpeed;
+    var tickerDuration = data.tickerDuration;
 
-    $(".marquee").css("animation-duration", (tickerSpeed.toString() + "s"))
-    $(".marquee2").css("animation-delay", ((tickerSpeed / 2).toString() + "s"))
+    $(".marquee span").css("animation-duration", (tickerDuration.toString() + "s"))
+    $(".marquee2 span").css("animation-delay", ((tickerDuration / 2).toString() + "s"))
+    //$("#tickerText1").css("animation-duration")
   });
 
   ko.applyBindings(viewModel);

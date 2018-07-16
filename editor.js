@@ -24,7 +24,7 @@ var viewModel = {
    blueSecondary: ko.observable("#000000"),
    orangePrimary: ko.observable("#000000"),
    orangeSecondary: ko.observable("#000000"),
-   tickerSpeed: ko.observable(20),
+   tickerDuration: ko.observable(20),
    tickerText: ko.observable("Ticker text")
 }
 
@@ -53,7 +53,7 @@ $(document).ready(function() {
     viewModel.selectedBlueWins(data.blueWins);
     viewModel.selectedOrangeWins(data.orangeWins);
     viewModel.tickerText(data.tickerText);
-    viewModel.tickerSpeed(data.tickerSpeed);
+    viewModel.tickerSpeed(data.tickerDuration);
   })
 
   ko.applyBindings(viewModel);

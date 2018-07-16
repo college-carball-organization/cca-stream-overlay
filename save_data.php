@@ -2,6 +2,7 @@
   $myFile = "data.json";
   //$arr_data = array();
 
+  // Attempt to convert element data to JSON format and store it to data.json
   try {
     $myObj->caster1 = $_POST['caster1'];
     $myObj->caster2 = $_POST['caster2'];
@@ -26,7 +27,7 @@
     $myObj->blueWins = $_POST['blueWins'];
     $myObj->orangeWins = $_POST['orangeWins'];
     $myObj->tickerText = $_POST['tickerText'];
-    $myObj->tickerSpeed = $_POST['tickerSpeed'];
+    $myObj->tickerDuration = $_POST['tickerDuration'];
 
     $myJSON = json_encode($myObj);
 
