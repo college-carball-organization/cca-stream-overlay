@@ -178,3 +178,35 @@ span {
   height: 61px;
   line-height: 61px;
 }
+
+#markerBlueTeam {
+  left: 38px;
+  top: 155px;
+  width: 8px;
+  height: 74px;
+  background-color: white;
+}
+
+#markerBluePrimary {
+  left: 38px;
+  top: 237px;
+  width: 8px;
+  height: 402px;
+  background-color: white;
+}
+
+#markerOrangeTeam {
+  left: 1461px;
+  top: 155px;
+  width: 8px;
+  height: 74px;
+  background-color: white;
+}
+
+#markerOrangePrimary {
+  left: 1461px;
+  top: 237px;
+  width: 8px;
+  height: 402px;
+  background-color: white;
+}

@@ -14,6 +14,8 @@ $(document).ready(function() {
     $('#divBlueSecondary').css("border-bottom-color", data.blueSecondary);
     $('#divOrangePrimary').css("border-top-color", data.orangePrimary);
     $('#divOrangeSecondary').css("border-bottom-color", data.orangeSecondary);
+    $('#markerBluePrimary').css("background-color", data.bluePrimary);
+    $('#markerOrangePrimary').css("background-color", data.orangePrimary);
   });
 
   ko.applyBindings(viewModel);

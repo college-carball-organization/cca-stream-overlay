@@ -71,3 +71,19 @@ span {
   border-width: 0 0 100px 100px;
   border-color: transparent transparent #fff200 transparent;
 }
+
+#markerBluePrimary {
+  left: 99px;
+  top: 490px;
+  width: 12px;
+  height: 101px;
+  background-color: white;
+}
+
+#markerOrangePrimary {
+  left: 1250px;
+  top: 490px;
+  width: 12px;
+  height: 101px;
+  background-color: white;
+}
