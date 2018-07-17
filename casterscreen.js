@@ -40,6 +40,10 @@ $(function() {
     $('#divBlueSecondary').css("border-bottom-color", data.blueSecondary);
     $('#divOrangePrimary').css("border-top-color", data.orangePrimary);
     $('#divOrangeSecondary').css("border-bottom-color", data.orangeSecondary);
+    $("#markerBlueTeam").css("background-color", data.bluePrimary);
+    $("#markerBluePrimary").css("background-color", data.bluePrimary);
+    $("#markerOrangeTeam").css("background-color", data.orangePrimary);
+    $("#markerOrangePrimary").css("background-color", data.orangePrimary);
   });
 
   ko.applyBindings(viewModel);

@@ -24,10 +24,7 @@ $(document).ready(function() {
     $("#blueTeamPrimary").css("background-color", data.bluePrimary);
     $("#orangeTeamPrimary").css("background-color", data.orangePrimary);
 
-    $("#markerBlueTeam").css("background-color", data.bluePrimary);
-    $("#markerBluePrimary").css("background-color", data.bluePrimary);
-    $("#markerOrangeTeam").css("background-color", data.orangePrimary);
-    $("#markerOrangePrimary").css("background-color", data.orangePrimary);
+
   });
 
   ko.applyBindings(viewModel);
