@@ -21,5 +21,5 @@
   "orangePrimary" : "#FF8B00",
   "orangeSecondary" : "#000000",
   "tickerText" : "NEU 1 - OSU 2: Game 4  |  LSU 0 - TAMU A 3: Final  |  Follow us on Twitter at @CollegeCarball  |  Soopy Sucks  |",
-  "tickerSpeed": "20s"
+  "tickerDuration": "20"
 }
