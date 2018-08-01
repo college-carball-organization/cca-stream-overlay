@@ -1,6 +1,6 @@
 @font-face {
   font-family: 'Source Sans Pro', sans-serif;
-  src: url('res/SourceSansProBold.otf');
+  src: url('res/Source Sans Pro Bold.otf');
 }
 
 div {
@@ -9,7 +9,7 @@ div {
 }
 
 span {
-  font-family: 'Source Sans Bold';
+  font-family: 'Source Sans Pro Bold';
   color: white;
 }
 

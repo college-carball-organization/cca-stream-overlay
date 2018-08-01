@@ -12,6 +12,7 @@ $(document).ready(function() {
 
     $(".marquee span").css("animation-duration", (tickerDuration.toString() + "s"))
     $(".marquee2 span").css("animation-delay", ((tickerDuration / 2).toString() + "s"))
+    console.log((tickerDuration / 2).toString() + "s");
     //$("#tickerText1").css("animation-duration")
   });
 
