@@ -114,10 +114,7 @@
 
           <p>
             <label id="textLabel"> Best of: </label>
-            <select id="bestOf" data-bind: "value: bestOf" name="bestOf">
-                <option value="3">3</option>
-                <option value="5">5</option>
-                <option value="7">7</option>
+            <select id="bestOf" data-bind: "options: bestOf, value: selectedBestOf" name="bestOf">
               </select>
           </p>
           <p>
