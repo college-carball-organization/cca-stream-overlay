@@ -3,6 +3,7 @@
   src: url('res/Source Sans Pro Bold.otf');
 }
 
+/* Prevents the padding from increasing*/
 * {
     -moz-box-sizing: border-box;
     -webkit-box-sizing: border-box;
