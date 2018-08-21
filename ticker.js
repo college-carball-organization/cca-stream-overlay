@@ -3,15 +3,18 @@ var viewModel = {
 }
 
 $(document).ready(function() {
-  // Retrieve the scoreboard data file
   $.getJSON("data.json", function(data) {
-    // Set the team names from the data file
+    console.log(viewModel.tickerText)
+
     viewModel.tickerText(data.tickerText);
+
+    console.log(viewModel.tickerText)
 
     var tickerDuration = data.tickerDuration;
 
-    //$(".marquee span").css("animation-duration", (tickerDuration.toString() + "s"))
-    //$(".marquee2 span").css("animation-delay", ((tickerDuration / 2).toString() + "s"))
+    $(".marquee span").css("width", width)
+    $(".marquee span").css("animation-duration", (tickerDuration.toString() + "s"))
+    $(".marquee2 span").css("animation-delay", ((tickerDuration / 2).toString() + "s"))
     //console.log((tickerDuration / 2).toString() + "s");
     //$("#tickerText1").css("animation-duration")
   });
