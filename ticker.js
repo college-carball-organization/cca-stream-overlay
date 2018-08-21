@@ -1,5 +1,6 @@
 var viewModel = {
-  tickerText: ko.observable("NEU 1 - OSU 2: Game 4  |  LSU 0 - TAMU A 3: Final  |  Follow us on Twitter at @CollegeCarball  |  Soopy Sucks  | Follow Bdawg on twitter. @Bdawg8RL | "),
+  //tickerText: ko.observable("NEU 1 - OSU 2: Game 4  |  LSU 0 - TAMU A 3: Final  |  Follow us on Twitter at @CollegeCarball  |  Soopy Sucks  | Follow Bdawg on twitter. @Bdawg8RL | "),
+  tickerText: ko.observable("")
 }
 
 $(document).ready(function() {
@@ -18,7 +19,6 @@ $(document).ready(function() {
 function calcDuration(speed) {
   var spanSelector = $("#tickerText2")
   var spanLength = spanSelector.width()
-  console.log(spanLength)
   var timeTaken = spanLength / speed
 
   return timeTaken

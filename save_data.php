@@ -27,7 +27,7 @@
     $myObj->blueWins = $_POST['blueWins'];
     $myObj->orangeWins = $_POST['orangeWins'];
     $myObj->tickerText = $_POST['tickerText'];
-    $myObj->tickerDuration = $_POST['tickerDuration'];
+    $myObj->tickerSpeed = $_POST['tickerSpeed'];
 
     $myJSON = json_encode($myObj);
 
