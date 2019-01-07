@@ -20,31 +20,45 @@ $(function() {
   // And fill in all of the forms
   $.getJSON("../data.json", function(data) {
     console.log("Data: " + data);
-    viewModel.caster1(data.caster1);
-    viewModel.caster2(data.caster2);
-    viewModel.blueName(data.blueName);
-    viewModel.orangeName(data.orangeName);
-    viewModel.blueP1(data.blueP1);
-    viewModel.blueP2(data.blueP2);
-    viewModel.blueP3(data.blueP3);
-    viewModel.blueP4(data.blueP4);
-    viewModel.blueP5(data.blueP5);
-
-    viewModel.orangeP1(data.orangeP1);
-    viewModel.orangeP2(data.orangeP2);
-    viewModel.orangeP3(data.orangeP3);
-    viewModel.orangeP4(data.orangeP4);
-    viewModel.orangeP5(data.orangeP5);
-
-    $('#divBluePrimary').css("border-top-color", data.bluePrimary);
-    $('#divBlueSecondary').css("border-bottom-color", data.blueSecondary);
-    $('#divOrangePrimary').css("border-top-color", data.orangePrimary);
-    $('#divOrangeSecondary').css("border-bottom-color", data.orangeSecondary);
-    $("#markerBlueTeam").css("background-color", data.bluePrimary);
-    $("#markerBluePrimary").css("background-color", data.bluePrimary);
-    $("#markerOrangeTeam").css("background-color", data.orangePrimary);
-    $("#markerOrangePrimary").css("background-color", data.orangePrimary);
+    
+    processData(data)
   });
 
   ko.applyBindings(viewModel);
 });
+
+function processData(data) {
+  viewModel.caster1(data.caster1);
+  viewModel.caster2(data.caster2);
+  viewModel.blueName(data.blueName);
+  viewModel.orangeName(data.orangeName);
+  viewModel.blueP1(data.blueP1);
+  viewModel.blueP2(data.blueP2);
+  viewModel.blueP3(data.blueP3);
+  viewModel.blueP4(data.blueP4);
+  viewModel.blueP5(data.blueP5);
+
+  viewModel.orangeP1(data.orangeP1);
+  viewModel.orangeP2(data.orangeP2);
+  viewModel.orangeP3(data.orangeP3);
+  viewModel.orangeP4(data.orangeP4);
+  viewModel.orangeP5(data.orangeP5);
+
+  // Set CSS
+  $('#divBluePrimary').css("border-top-color", data.bluePrimary);
+  $('#divBlueSecondary').css("border-bottom-color", data.blueSecondary);
+  $('#divOrangePrimary').css("border-top-color", data.orangePrimary);
+  $('#divOrangeSecondary').css("border-bottom-color", data.orangeSecondary);
+  $("#markerBlueTeam").css("background-color", data.bluePrimary);
+  $("#markerBluePrimary").css("background-color", data.bluePrimary);
+  $("#markerOrangeTeam").css("background-color", data.orangePrimary);
+  $("#markerOrangePrimary").css("background-color", data.orangePrimary);
+}
+
+var autoUpdateTime = 5 * 100 // in milliseconds
+
+window.setInterval(function() {
+  $.getJSON("../data.json", function(data) {
+    processData(data)
+  });
+}, autoUpdateTime)

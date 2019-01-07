@@ -5,16 +5,28 @@ var viewModel = {
 
 $(document).ready(function() {
   $.getJSON("../data.json", function(data) {
-    viewModel.tickerText(data.tickerText);
-
-    var tickerDuration = calcDuration(data.tickerSpeed);
-
-    $(".marquee span").css("animation-duration", (tickerDuration.toString() + "s"))
-    $(".marquee2 span").css("animation-delay", ((tickerDuration / 2).toString() + "s"))
+    processData(data)
   });
 
   ko.applyBindings(viewModel);
 });
+
+function processData(data) {
+  viewModel.tickerText(data.tickerText);
+
+  var tickerDuration = calcDuration(data.tickerSpeed);
+
+  $(".marquee span").css("animation-duration", (tickerDuration.toString() + "s"))
+  $(".marquee2 span").css("animation-delay", ((tickerDuration / 2).toString() + "s"))
+}
+
+var autoUpdateTime = 5 * 100 // in milliseconds
+
+window.setInterval(function() {
+  $.getJSON("../data.json", function(data) {
+    processData(data)
+  });
+}, autoUpdateTime)
 
 function calcDuration(speed) {
   var spanSelector = $("#tickerText2")
