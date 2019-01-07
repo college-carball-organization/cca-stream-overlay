@@ -1,6 +1,6 @@
 @font-face {
   font-family: 'Source Sans Pro', sans-serif;
-  src: url('res/Source Sans Pro Bold.ttf');
+  src: url('../res/Source Sans Pro Bold.ttf');
 }
 
 /* Prevents the padding from increasing?*/
