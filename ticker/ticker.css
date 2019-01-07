@@ -33,6 +33,7 @@ span {
   white-space: nowrap;
   overflow: hidden;
   position: absolute;
+  width: 100%;
 }
 
 .marquee span {
