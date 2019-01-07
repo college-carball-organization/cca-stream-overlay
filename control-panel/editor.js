@@ -30,6 +30,8 @@ var viewModel = {
 }
 
 $(document).ready(function() {
+  // Set the view model(and thus the intial form text)
+  //  from the previous data
   $.getJSON("data.json", function(data) {
     viewModel.caster1(data.caster1);
     viewModel.caster2(data.caster2);
