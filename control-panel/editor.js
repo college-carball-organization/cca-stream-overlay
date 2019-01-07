@@ -30,34 +30,48 @@ var viewModel = {
 }
 
 $(document).ready(function() {
+  // Set the view model(and thus the intial form text)
+  //  from the previous data
   $.getJSON("data.json", function(data) {
-    viewModel.caster1(data.caster1);
-    viewModel.caster2(data.caster2);
-    viewModel.blueName(data.blueName);
-    viewModel.blueP1(data.blueP1);
-    viewModel.blueP2(data.blueP2);
-    viewModel.blueP3(data.blueP3);
-    viewModel.blueP4(data.blueP4);
-    viewModel.blueP5(data.blueP5);
-    viewModel.orangeName(data.orangeName);
-    viewModel.orangeP1(data.orangeP1);
-    viewModel.orangeP2(data.orangeP2);
-    viewModel.orangeP3(data.orangeP3);
-    viewModel.orangeP4(data.orangeP4);
-    viewModel.orangeP5(data.orangeP5);
-
-    viewModel.bluePrimary(data.bluePrimary);
-    viewModel.blueSecondary(data.blueSecondary);
-    viewModel.orangePrimary(data.orangePrimary);
-    viewModel.orangeSecondary(data.orangeSecondary);
-    //viewModel.bestOf(data.bestOf);
-    viewModel.selectedBestOf(data.bestOf);
-    viewModel.selectedBlueWins(data.blueWins);
-    viewModel.selectedOrangeWins(data.orangeWins);
-    viewModel.tickerText(data.tickerText);
-    viewModel.tickerSpeed(data.tickerSpeed);
+    processData(data)
   })
 
   ko.applyBindings(viewModel);
 
 });
+
+function processData(data) {
+  viewModel.caster1(data.caster1);
+  viewModel.caster2(data.caster2);
+  viewModel.blueName(data.blueName);
+  viewModel.blueP1(data.blueP1);
+  viewModel.blueP2(data.blueP2);
+  viewModel.blueP3(data.blueP3);
+  viewModel.blueP4(data.blueP4);
+  viewModel.blueP5(data.blueP5);
+  viewModel.orangeName(data.orangeName);
+  viewModel.orangeP1(data.orangeP1);
+  viewModel.orangeP2(data.orangeP2);
+  viewModel.orangeP3(data.orangeP3);
+  viewModel.orangeP4(data.orangeP4);
+  viewModel.orangeP5(data.orangeP5);
+
+  viewModel.bluePrimary(data.bluePrimary);
+  viewModel.blueSecondary(data.blueSecondary);
+  viewModel.orangePrimary(data.orangePrimary);
+  viewModel.orangeSecondary(data.orangeSecondary);
+  //viewModel.bestOf(data.bestOf);
+  viewModel.selectedBestOf(data.bestOf);
+  viewModel.selectedBlueWins(data.blueWins);
+  viewModel.selectedOrangeWins(data.orangeWins);
+  viewModel.tickerText(data.tickerText);
+  viewModel.tickerSpeed(data.tickerSpeed);
+}
+
+var autoUpdateTime = 5 * 100 // in milliseconds
+
+window.setInterval(function() {
+  $.getJSON("../data.json", function(data) {
+    processData(data)
+  });
+}, autoUpdateTime)

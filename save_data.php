@@ -34,7 +34,7 @@
     // Write json data into data.json file
     if(file_put_contents($myFile, $myJSON)) {
       echo 'Data sucessfully saved';
-      header("Location: http://prod.collegecarball.net/");
+      header("Location: http://prod.collegecarball.net/caster-screen/index.html");
       exit();
     } else {
       //echo 'Error';

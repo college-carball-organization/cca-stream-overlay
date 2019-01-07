@@ -5,30 +5,40 @@ var viewModel = {
 
 $(document).ready(function() {
   // Retrieve the scoreboard data file
-  $.getJSON("data.json", function(data) {
-    // Set the team names from the data file
-    viewModel.blueName(data.blueName);
-    viewModel.orangeName(data.orangeName);
-
-    // Set the appropriate series length and # of wins for both team from the data file
-    showBestOf(data.bestOf);
-    showBlueTicks(data.blueWins);
-    showOrangeTicks(data.orangeWins);
-
-    // Set team colors
-    $('#divBluePrimary').css("border-top-color", data.bluePrimary);
-    $('#divBlueSecondary').css("border-bottom-color", data.blueSecondary);
-    $('#divOrangePrimary').css("border-top-color", data.orangePrimary);
-    $('#divOrangeSecondary').css("border-bottom-color", data.orangeSecondary);
-
-    $("#blueTeamPrimary").css("background-color", data.bluePrimary);
-    $("#orangeTeamPrimary").css("background-color", data.orangePrimary);
-
-
+  $.getJSON("../data.json", function(data) {
+    processData(data)
   });
 
   ko.applyBindings(viewModel);
 });
+
+function processData(data) {
+  // Set the team names from the data file
+  viewModel.blueName(data.blueName);
+  viewModel.orangeName(data.orangeName);
+
+  // Set the appropriate series length and # of wins for both team from the data file
+  showBestOf(data.bestOf);
+  showBlueTicks(data.blueWins);
+  showOrangeTicks(data.orangeWins);
+
+  // Set team colors
+  $('#divBluePrimary').css("border-top-color", data.bluePrimary);
+  $('#divBlueSecondary').css("border-bottom-color", data.blueSecondary);
+  $('#divOrangePrimary').css("border-top-color", data.orangePrimary);
+  $('#divOrangeSecondary').css("border-bottom-color", data.orangeSecondary);
+
+  $("#blueTeamPrimary").css("background-color", data.bluePrimary);
+  $("#orangeTeamPrimary").css("background-color", data.orangePrimary);
+}
+
+var autoUpdateTime = 5 * 100 // in milliseconds
+
+window.setInterval(function() {
+  $.getJSON("../data.json", function(data) {
+    processData(data)
+  });
+}, autoUpdateTime)
 
 // Helper functions to automatically hide & show the specified images
 
