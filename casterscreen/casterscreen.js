@@ -19,7 +19,7 @@ $(function() {
   // Get all of the data from the Editor
   // And fill in all of the forms
   $.getJSON("../data.json", function(data) {
-    //console.log("Data: " + data);
+    console.log("Data: " + data);
     
     processData(data)
   });
