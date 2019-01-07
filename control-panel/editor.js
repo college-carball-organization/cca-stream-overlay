@@ -67,11 +67,3 @@ function processData(data) {
   viewModel.tickerText(data.tickerText);
   viewModel.tickerSpeed(data.tickerSpeed);
 }
-
-var autoUpdateTime = 5 * 100 // in milliseconds
-
-window.setInterval(function() {
-  $.getJSON("../data.json", function(data) {
-    processData(data)
-  });
-}, autoUpdateTime)
