@@ -4,7 +4,7 @@ var viewModel = {
 }
 
 $(document).ready(function() {
-  $.getJSON("data.json", function(data) {
+  $.getJSON("../data.json", function(data) {
     viewModel.tickerText(data.tickerText);
 
     var tickerDuration = calcDuration(data.tickerSpeed);

@@ -18,7 +18,7 @@ var viewModel = {
 $(function() {
   // Get all of the data from the Editor
   // And fill in all of the forms
-  $.getJSON("data.json", function(data) {
+  $.getJSON("../data.json", function(data) {
     console.log("Data: " + data);
     viewModel.caster1(data.caster1);
     viewModel.caster2(data.caster2);
