@@ -32,7 +32,7 @@ var viewModel = {
 $(document).ready(function() {
   // Set the view model(and thus the intial form text)
   //  from the previous data
-  $.getJSON("data.json", function(data) {
+  $.getJSON("../data.json", function(data) {
     processData(data)
   })
 
@@ -67,3 +67,6 @@ function processData(data) {
   viewModel.tickerText(data.tickerText);
   viewModel.tickerSpeed(data.tickerSpeed);
 }
+
+var autoUpdateTime = 5 * 100 // in milliseconds
+
