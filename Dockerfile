@@ -7,15 +7,4 @@ RUN rm -rf /usr/share/nginx/html
 COPY ./docker/nginx/conf.d/default.conf /etc/nginx/conf.d/default.conf
 
 # Copy all served files into nginx static file folder
-COPY [                   \
-  "casterscreen",        \
-  "control-panel",       \
-  "intermission",        \
-  "lib",                 \
-  "res",                 \
-  "scoreboard",          \
-  "ticker",              \
-  "data.json",           \
-  "panel.css",           \
-  "savedata.php"         \
-] /usr/share/nginx/html
+COPY ./src /usr/share/nginx/html/
