@@ -8,6 +8,7 @@
   --main-container-horizontal-indent: 76px;
   --main-container-bottom-indent: 104px;
   --squiggle-shift: 295px;
+  --mask-shift: 310px;
 }
 
 #divpanel {
@@ -77,6 +78,11 @@
   font-size: 64px;
   margin-right: 15px;
   padding-top: 11px;
+}
+
+.score_card_team_mask {
+  position: absolute;
+  left: var(--mask-shift);
 }
 
 .blue-team-header {
