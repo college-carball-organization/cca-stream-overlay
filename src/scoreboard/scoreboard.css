@@ -9,7 +9,8 @@
 
   --scorebug-team-bar-height: 57px;
   --scorebug-team-bar-width: 310px;
-  --scorebug-team-mask-left-offset: 200px;
+  --scorebug-team-mask-left-offset: 221px;
+  --scorebug-team-mask-top-offset: -1px;
   --scorebug-team-separator-top-offset: 0px;
   --scorebug-team-separator-left-offset: 211px;
   --scorebug-bottom-height: 29px;
@@ -25,6 +26,12 @@
   --scorebug-bottom-font-vertical-offset: 3px;
 
   --scorebug-wins-right-offset: 3px;
+}
+
+#divpanel > * {
+  margin: 0;
+  padding: 0;
+  position: absolute;
 }
 
 div {
@@ -45,8 +52,16 @@ div {
   height: var(--scorebug-team-bar-height);
 }
 
-#scorebug-bar-masks {
+#scorebug-bar-masks-home {
   z-index: 50;
+  left: calc(var(--scorebug-left-offset) + var(--scorebug-team-mask-left-offset));
+  top: calc(var(--scorebug-top-offset) + var(--scorebug-team-separator-top-offset) + var(--scorebug-team-mask-top-offset));
+}
+
+#scorebug-bar-masks-away {
+  z-index: 50;
+  left: calc(var(--scorebug-left-offset) + var(--scorebug-team-mask-left-offset));
+  top: calc(var(--scorebug-top-offset) + var(--scorebug-team-bar-height) + var(--scorebug-team-mask-top-offset));
 }
 
 #home-team-separator {
