@@ -34,7 +34,7 @@
     // Write json data into data.json file
     if(file_put_contents($myFile, $myJSON)) {
       echo 'Data sucessfully saved';
-      header("Location: http://prod.cca.gg/control-panel/index.html");
+      header("Location: https://prod.cca.gg/control-panel/index.html");
       exit();
     } else {
       //echo 'Error';
