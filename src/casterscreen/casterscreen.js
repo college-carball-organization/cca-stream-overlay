@@ -7,12 +7,14 @@ var viewModel = {
   blueP3: ko.observable(),
   blueP4: ko.observable(),
   blueP5: ko.observable(),
+  blueWins: ko.observable("0"),
   orangeName: ko.observable(),
   orangeP1: ko.observable(),
   orangeP2: ko.observable(),
   orangeP3: ko.observable(),
   orangeP4: ko.observable(),
   orangeP5: ko.observable(),
+  orangeWins: ko.observable("0"),
   seriesLength: ko.observable("BEST OF 0")
 };
 
@@ -20,8 +22,6 @@ $(function() {
   // Get all of the data from the Editor
   // And fill in all of the forms
   $.getJSON("../data.json", function(data) {
-    console.log("Data: " + data);
-
     processData(data);
   });
 
@@ -44,6 +44,10 @@ function processData(data) {
   viewModel.orangeP3(data.orangeP3);
   viewModel.orangeP4(data.orangeP4);
   viewModel.orangeP5(data.orangeP5);
+
+  // Update wins
+  viewModel.blueWins(data.blueWins);
+  viewModel.orangeWins(data.orangeWins);
 
   // Update series length
   viewModel.seriesLength("BEST OF " + data.bestOf);

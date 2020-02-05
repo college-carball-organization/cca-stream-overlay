@@ -23,7 +23,9 @@
         <div class="bottom-panels">
           <div class="score-card">
             <div class="blue-team-header">
+              <div id="blue-team-score-card-name" class="score-card-team-name" data-bind="text: blueName"></div>
               <img id="blue-team-squiggle" src="/res/caster_page_squiggle.png" width="92" height="80" />
+              <div id="blue-team-score-card-wins" class="score-card-team-wins" data-bind="text: blueWins"></div>
             </div>
             <div class="game-headers">
               <div id="game-header-1" class="game-header">G1</div>
@@ -34,13 +36,31 @@
               <div id="game-header-6" class="game-header">G6</div>
               <div id="game-header-7" class="game-header">G7</div>
             </div>
-            <div class="blue-team-scores"></div>
-            <div class="orange-team-scores"></div>
+            <div class="blue-team-scores">
+              <div id="blue-game-score-1" class="game-score">0</div>
+              <div id="blue-game-score-2" class="game-score">0</div>
+              <div id="blue-game-score-3" class="game-score">0</div>
+              <div id="blue-game-score-4" class="game-score">0</div>
+              <div id="blue-game-score-5" class="game-score">0</div>
+              <div id="blue-game-score-6" class="game-score">0</div>
+              <div id="blue-game-score-7" class="game-score">0</div>
+            </div>
+            <div class="orange-team-scores">
+              <div id="orange-game-score-1" class="game-score">0</div>
+              <div id="orange-game-score-2" class="game-score">0</div>
+              <div id="orange-game-score-3" class="game-score">0</div>
+              <div id="orange-game-score-4" class="game-score">0</div>
+              <div id="orange-game-score-5" class="game-score">0</div>
+              <div id="orange-game-score-6" class="game-score">0</div>
+              <div id="orange-game-score-7" class="game-score">0</div>
+            </div>
             <div class="best-of-series">
               <div class="best-of-series-text" data-bind="text: seriesLength"></div>
             </div>
             <div class="orange-team-header">
+              <div id="orange-team-score-card-name" class="score-card-team-name" data-bind="text: orangeName"></div>
               <img id="orange-team-squiggle" src="/res/caster_page_squiggle.png" width="92" height="80" />
+              <div id="orange-team-score-card-wins" class="score-card-team-wins" data-bind="text: orangeWins"></div>
             </div>
           </div>
           
