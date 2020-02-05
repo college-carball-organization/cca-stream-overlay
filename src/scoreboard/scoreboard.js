@@ -28,7 +28,7 @@ viewModel.orangeTextColor = ko.pureComputed(function() {
 viewModel.gameNumber = ko.pureComputed(function() {
   return (
     "GAME " +
-    (parseInt(viewModel.blueWins()) + parseInt(viewModel.orangeWins()))
+    (1 + parseInt(viewModel.blueWins()) + parseInt(viewModel.orangeWins()))
   );
 });
 
