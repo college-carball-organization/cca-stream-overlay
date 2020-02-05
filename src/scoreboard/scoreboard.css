@@ -3,87 +3,139 @@
   src: url('../res/Uni Sans Heavy.otf');
 }
 
-div {
-  position: relative;
-  font-size: 30px;
+:root {
+  --scorebug-top-offset: 66px;
+  --scorebug-left-offset: 65px;
+
+  --scorebug-team-bar-height: 57px;
+  --scorebug-team-bar-width: 310px;
+  --scorebug-team-mask-left-offset: 200px;
+  --scorebug-team-separator-top-offset: 0px;
+  --scorebug-team-separator-left-offset: 211px;
+  --scorebug-bottom-height: 29px;
+  --scorebug-bottom-wall-offset: 40px;
+
+  --scorebug-team-font-size: 28pt;
+  --scorebug-bottom-font-size: 16pt;
+
+  --scorebug-team-name-width: 225px;
+  --scorebug-team-wins-width: 40px;
+
+  --scorebug-font-vertical-offset: 7px;
+  --scorebug-bottom-font-vertical-offset: 3px;
+
+  --scorebug-wins-right-offset: 3px;
 }
 
-span {
+div {
+  position: relative;
+}
+
+#home-team-box {
+  left: var(--scorebug-left-offset);
+  top: var(--scorebug-top-offset);
+  width: var(--scorebug-team-bar-width);
+  height: var(--scorebug-team-bar-height);
+}
+
+#away-team-box {
+  left: var(--scorebug-left-offset);
+  top: calc(var(--scorebug-top-offset) + var(--scorebug-team-bar-height));
+  width: var(--scorebug-team-bar-width);
+  height: var(--scorebug-team-bar-height);
+}
+
+#scorebug-bar-masks {
+  z-index: 50;
+}
+
+#home-team-separator {
+  z-index: 100;
+  left: calc(var(--scorebug-left-offset) + var(--scorebug-team-separator-left-offset));
+  top: calc(var(--scorebug-top-offset) + var(--scorebug-team-separator-top-offset));
+}
+
+#away-team-separator {
+  z-index: 100;
+  left: calc(var(--scorebug-left-offset) + var(--scorebug-team-separator-left-offset));
+  top: calc(var(--scorebug-top-offset) + var(--scorebug-team-bar-height) + var(--scorebug-team-separator-top-offset));
+}
+
+#blue-team-div {
   font-family: 'Uni Sans Heavy';
-  color: #124755;
+  left: var(--scorebug-left-offset);
+  top: var(--scorebug-top-offset);
+  width: var(--scorebug-team-bar-width);
+  height: var(--scorebug-team-bar-height);
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
 }
 
 #divBlueName {
+  font-size: var(--scorebug-team-font-size);
+  padding-left: 15px;
+  padding-top: var(--scorebug-font-vertical-offset);
+  width: var(--scorebug-team-name-width);
+}
+
+#divBlueWins {
+  font-size: 32pt;
   text-align: center;
-  left: 64px;
-  top: 100px;
-  width: 233px;
-  height: 44px;
-  line-height: 44px;
+  margin-right: var(--scorebug-wins-right-offset);
+  padding-top: var(--scorebug-font-vertical-offset);
+  width: var(--scorebug-team-wins-width);
+}
+
+#orange-team-div {
+  font-family: 'Uni Sans Heavy';
+  left: var(--scorebug-left-offset);
+  top: calc(var(--scorebug-top-offset) + var(--scorebug-team-bar-height));
+  width: var(--scorebug-team-bar-width);
+  height: var(--scorebug-team-bar-height);
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
 }
 
 #divOrangeName {
+  font-size: var(--scorebug-team-font-size);
+  padding-left: 15px;
+  padding-top: var(--scorebug-font-vertical-offset);
+  width: var(--scorebug-team-name-width);
+}
+
+#divOrangeWins {
+  font-size: 32pt;
   text-align: center;
-  left: 64px;
-  top: 159px;
-  width: 233px;
-  height: 44px;
-  line-height: 44px;
+  margin-right: var(--scorebug-wins-right-offset);
+  padding-top: var(--scorebug-font-vertical-offset);
+  width: var(--scorebug-team-wins-width);
 }
 
-#divBluePrimary {
-  left: 302px;
-  top: 100px;
-  width: 0;
-  height: 0;
-  border-style: solid;
-  border-width: 53px 53px 0 0;
-  border-color: transparent transparent transparent transparent;
-  border-top-color: #007bff;
+#scorebug-bottom-div {
+  font-family: 'Uni Sans Heavy';
+  font-size: var(--scorebug-bottom-font-size);
+  left: var(--scorebug-left-offset);
+  top: calc(var(--scorebug-top-offset) + (2 * var(--scorebug-team-bar-height)));
+  width: var(--scorebug-team-bar-width);
+  height: var(--scorebug-bottom-height);
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
 }
 
-#divBlueSecondary {
-  left: 302px;
-  top: 100px;
-  width: 0;
-  height: 0;
-  border-style: solid;
-  border-width: 0 0 53px 53px;
-  border-color: transparent transparent #fff200 transparent;
+#divGameNumber {
+  color: white;
+  padding-top: var(--scorebug-bottom-font-vertical-offset);
+  padding-left: var(--scorebug-bottom-wall-offset);
 }
 
-#divOrangePrimary {
-  left: 302px;
-  top: 159px;
-  width: 0;
-  height: 0;
-  border-style: solid;
-  border-width: 53px 53px 0 0;
-  border-color: #007bff transparent transparent transparent;
-}
-
-#divOrangeSecondary {
-  left: 302px;
-  top: 159px;
-  width: 0;
-  height: 0;
-  border-style: solid;
-  border-width: 0 0 53px 53px;
-  border-color: transparent transparent #fff200 transparent;
-}
-
-#blueTeamPrimary {
-  left: 55px;
-  top: 100px;
-  width: 6px;
-  height: 53px;
-  background-color: white;
-}
-
-#orangeTeamPrimary {
-  left: 55px;
-  top: 159px;
-  width: 6px;
-  height: 53px;
-  background-color: white;
+#divSeriesLength {
+  color: white;
+  padding-top: var(--scorebug-bottom-font-vertical-offset);
+  padding-right: var(--scorebug-bottom-wall-offset);
 }
