@@ -26,6 +26,21 @@
     $myObj->bestOf = $_POST['bestOf'];
     $myObj->blueWins = $_POST['blueWins'];
     $myObj->orangeWins = $_POST['orangeWins'];
+    $myObj->game1BlueScore = $_POST['game1BlueScore'];
+    $myObj->game1OrangeScore = $_POST['game1OrangeScore'];
+    $myObj->game2BlueScore = $_POST['game2BlueScore'];
+    $myObj->game2OrangeScore = $_POST['game2OrangeScore'];
+    $myObj->game3BlueScore = $_POST['game3BlueScore'];
+    $myObj->game3OrangeScore = $_POST['game3OrangeScore'];
+    $myObj->game4BlueScore = $_POST['game4BlueScore'];
+    $myObj->game4OrangeScore = $_POST['game4OrangeScore'];
+    $myObj->game5BlueScore = $_POST['game5BlueScore'];
+    $myObj->game5OrangeScore = $_POST['game5OrangeScore'];
+    $myObj->game6BlueScore = $_POST['game6BlueScore'];
+    $myObj->game6OrangeScore = $_POST['game6OrangeScore'];
+    $myObj->game7BlueScore = $_POST['game7BlueScore'];
+    $myObj->game7OrangeScore = $_POST['game7OrangeScore'];
+
     $myObj->tickerText = $_POST['tickerText'];
     $myObj->tickerSpeed = $_POST['tickerSpeed'];
 

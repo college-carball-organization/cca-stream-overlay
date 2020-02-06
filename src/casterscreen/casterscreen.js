@@ -1,6 +1,7 @@
 var viewModel = {
   caster1: ko.observable(),
   caster2: ko.observable(),
+
   blueName: ko.observable(),
   blueP1: ko.observable(),
   blueP2: ko.observable(),
@@ -8,6 +9,9 @@ var viewModel = {
   blueP4: ko.observable(),
   blueP5: ko.observable(),
   blueWins: ko.observable("0"),
+  blueColorPrimary: ko.observable("#000000"),
+  blueColorSecondary: ko.observable("#FFFFFF"),
+
   orangeName: ko.observable(),
   orangeP1: ko.observable(),
   orangeP2: ko.observable(),
@@ -15,8 +19,77 @@ var viewModel = {
   orangeP4: ko.observable(),
   orangeP5: ko.observable(),
   orangeWins: ko.observable("0"),
+  orangeColorPrimary: ko.observable("#FFFFFF"),
+  orangeColorSecondary: ko.observable("#000000"),
+
+  game1BlueScore: ko.observable("0"),
+  game1OrangeScore: ko.observable("0"),
+  game2BlueScore: ko.observable("0"),
+  game2OrangeScore: ko.observable("0"),
+  game3BlueScore: ko.observable("0"),
+  game3OrangeScore: ko.observable("0"),
+  game4BlueScore: ko.observable("0"),
+  game4OrangeScore: ko.observable("0"),
+  game5BlueScore: ko.observable("0"),
+  game5OrangeScore: ko.observable("0"),
+  game6BlueScore: ko.observable("0"),
+  game6OrangeScore: ko.observable("0"),
+  game7BlueScore: ko.observable("0"),
+  game7OrangeScore: ko.observable("0"),
+
   seriesLength: ko.observable("BEST OF 0")
 };
+
+viewModel.blueTextColor = ko.pureComputed(function() {
+  rgb = hexToRgb(viewModel.blueColorPrimary());
+  contrast = getColorContrast(rgb);
+  return contrast > 125 ? "#000000" : "#FFFFFF";
+});
+
+viewModel.orangeTextColor = ko.pureComputed(function() {
+  rgb = hexToRgb(viewModel.orangeColorPrimary());
+  contrast = getColorContrast(rgb);
+  return contrast > 125 ? "#000000" : "#FFFFFF";
+});
+
+viewModel.gameCount = ko.pureComputed(function() {
+  return (
+    "" + (parseInt(viewModel.blueWins()) + parseInt(viewModel.orangeWins()))
+  );
+});
+
+viewModel.blueColorSecondary.subscribe(function(newValue) {
+  if (!newValue) {
+    return;
+  }
+
+  var { r, g, b } = hexToRgb(newValue);
+  const color = new Color(r, g, b);
+  const solver = new Solver(color);
+  const result = solver.solve();
+
+  $("#blue-team-squiggle").attr("style", result.filter);
+});
+
+viewModel.orangeColorSecondary.subscribe(function(newValue) {
+  if (!newValue) {
+    return;
+  }
+
+  var { r, g, b } = hexToRgb(newValue);
+  const color = new Color(r, g, b);
+  const solver = new Solver(color);
+  const result = solver.solve();
+
+  $("#orange-team-squiggle").attr("style", result.filter);
+});
+
+viewModel.gameCount.subscribe(function(newValue) {
+  if (!newValue) {
+    return;
+  }
+  buildScoreCard(newValue);
+});
 
 $(function() {
   // Get all of the data from the Editor
@@ -26,28 +99,58 @@ $(function() {
   });
 
   ko.applyBindings(viewModel);
+
+  buildScoreCard(viewModel.gameCount());
 });
 
 function processData(data) {
+  // Update casters
   viewModel.caster1(data.caster1);
   viewModel.caster2(data.caster2);
+
+  // Update Team Names
   viewModel.blueName(data.blueName);
   viewModel.orangeName(data.orangeName);
+
+  // Update Blue team players
   viewModel.blueP1(data.blueP1);
   viewModel.blueP2(data.blueP2);
   viewModel.blueP3(data.blueP3);
   viewModel.blueP4(data.blueP4);
   viewModel.blueP5(data.blueP5);
 
+  // Update orange team players
   viewModel.orangeP1(data.orangeP1);
   viewModel.orangeP2(data.orangeP2);
   viewModel.orangeP3(data.orangeP3);
   viewModel.orangeP4(data.orangeP4);
   viewModel.orangeP5(data.orangeP5);
 
+  // Update colors
+  viewModel.blueColorPrimary(data.bluePrimary);
+  viewModel.blueColorSecondary(data.blueSecondary);
+  viewModel.orangeColorPrimary(data.orangePrimary);
+  viewModel.orangeColorSecondary(data.orangeSecondary);
+
   // Update wins
   viewModel.blueWins(data.blueWins);
   viewModel.orangeWins(data.orangeWins);
+
+  // Update scores
+  viewModel.game1BlueScore(data.game1BlueScore);
+  viewModel.game1OrangeScore(data.game1OrangeScore);
+  viewModel.game2BlueScore(data.game2BlueScore);
+  viewModel.game2OrangeScore(data.game2OrangeScore);
+  viewModel.game3BlueScore(data.game3BlueScore);
+  viewModel.game3OrangeScore(data.game3OrangeScore);
+  viewModel.game4BlueScore(data.game4BlueScore);
+  viewModel.game4OrangeScore(data.game4OrangeScore);
+  viewModel.game5BlueScore(data.game5BlueScore);
+  viewModel.game5OrangeScore(data.game5OrangeScore);
+  viewModel.game6BlueScore(data.game6BlueScore);
+  viewModel.game6OrangeScore(data.game6OrangeScore);
+  viewModel.game7BlueScore(data.game7BlueScore);
+  viewModel.game7OrangeScore(data.game7OrangeScore);
 
   // Update series length
   viewModel.seriesLength("BEST OF " + data.bestOf);
@@ -60,6 +163,36 @@ window.setInterval(function() {
     processData(data);
   });
 }, autoUpdateTime);
+
+function buildScoreCard(gameCount) {
+  var MAX_COLUMNS = 7;
+
+  console.log("gameCount: " + gameCount);
+
+  for (var i = 1; i <= MAX_COLUMNS; ++i) {
+    $(`#game-header-${i}`).css({ position: "absolute", visibility: "hidden" });
+    $(`#blue-game-score-${i}`).css({
+      position: "absolute",
+      visibility: "hidden"
+    });
+    $(`#orange-game-score-${i}`).css({
+      position: "absolute",
+      visibility: "hidden"
+    });
+  }
+
+  for (var i = 1; i <= parseInt(gameCount); ++i) {
+    $(`#game-header-${i}`).css({ position: "relative", visibility: "visible" });
+    $(`#blue-game-score-${i}`).css({
+      position: "relative",
+      visibility: "visible"
+    });
+    $(`#orange-game-score-${i}`).css({
+      position: "relative",
+      visibility: "visible"
+    });
+  }
+}
 
 // Helper functions ------------------------------------------------------------
 

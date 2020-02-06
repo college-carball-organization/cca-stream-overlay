@@ -21,10 +21,27 @@ var viewModel = {
   selectedBlueWins: ko.observable(),
   orangeWins: ko.observableArray([0, 1, 2, 3, 4]),
   selectedOrangeWins: ko.observable(),
+
+  game1BlueScore: ko.observable("0"),
+  game1OrangeScore: ko.observable("0"),
+  game2BlueScore: ko.observable("0"),
+  game2OrangeScore: ko.observable("0"),
+  game3BlueScore: ko.observable("0"),
+  game3OrangeScore: ko.observable("0"),
+  game4BlueScore: ko.observable("0"),
+  game4OrangeScore: ko.observable("0"),
+  game5BlueScore: ko.observable("0"),
+  game5OrangeScore: ko.observable("0"),
+  game6BlueScore: ko.observable("0"),
+  game6OrangeScore: ko.observable("0"),
+  game7BlueScore: ko.observable("0"),
+  game7OrangeScore: ko.observable("0"),
+
   bluePrimary: ko.observable("#000000"),
   blueSecondary: ko.observable("#000000"),
   orangePrimary: ko.observable("#000000"),
   orangeSecondary: ko.observable("#000000"),
+
   tickerSpeed: ko.observable(40),
   tickerText: ko.observable("Ticker text")
 };
@@ -63,6 +80,22 @@ function processData(data) {
   viewModel.selectedBestOf(data.bestOf);
   viewModel.selectedBlueWins(data.blueWins);
   viewModel.selectedOrangeWins(data.orangeWins);
+
+  viewModel.game1BlueScore(data.game1BlueScore);
+  viewModel.game1OrangeScore(data.game1OrangeScore);
+  viewModel.game2BlueScore(data.game2BlueScore);
+  viewModel.game2OrangeScore(data.game2OrangeScore);
+  viewModel.game3BlueScore(data.game3BlueScore);
+  viewModel.game3OrangeScore(data.game3OrangeScore);
+  viewModel.game4BlueScore(data.game4BlueScore);
+  viewModel.game4OrangeScore(data.game4OrangeScore);
+  viewModel.game5BlueScore(data.game5BlueScore);
+  viewModel.game5OrangeScore(data.game5OrangeScore);
+  viewModel.game6BlueScore(data.game6BlueScore);
+  viewModel.game6OrangeScore(data.game6OrangeScore);
+  viewModel.game7BlueScore(data.game7BlueScore);
+  viewModel.game7OrangeScore(data.game7OrangeScore);
+
   viewModel.tickerText(data.tickerText);
   viewModel.tickerSpeed(data.tickerSpeed);
 }

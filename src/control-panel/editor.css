@@ -3,6 +3,26 @@
   grid: auto / auto auto auto;
   grid-gap: 0px;
   padding: 10px;
+  grid-template-areas:
+    "people people teams  teams"
+    "people people teams  teams"
+    "scores scores scores scores"
+}
+
+.fieldset-people {
+  grid-area: people;
+}
+
+.fieldset-teams {
+  grid-area: teams;
+}
+
+.fieldset-scores {
+  grid-area: scores;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: center;
 }
 
 /* fieldset {

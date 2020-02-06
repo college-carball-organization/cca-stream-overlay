@@ -11,7 +11,39 @@
 }
 
 .team-container {
-  height: 150px;
-  width: 1344px;
-  background-color: aqua;
+  font-family: 'Uni Sans Heavy';
+  height: 130px;
+  width: 1300px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: stretch;
+}
+
+#blue-team-container {
+  flex: 1;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+#blue-team-name {
+  font-size: 108px;
+  padding-left: 20px;
+  padding-top: 15px;
+}
+
+#orange-team-container {
+  flex: 1;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+#orange-team-name {
+  font-size: 108px;
+  padding-right: 20px;
+  padding-top: 15px;
 }

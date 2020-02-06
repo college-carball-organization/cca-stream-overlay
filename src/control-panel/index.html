@@ -16,8 +16,7 @@
 <body>
   <form action="/save_data.php" method="POST" id="control-panel-form" name="control-panel-form">
     <div class="grid-container">
-      <fieldset>
-
+      <fieldset class="fieldset-people">
         <div id="casters" class="box">
           <p class="aligned">
             <label class="relative" id="textlabel"> Caster 1 </label>
@@ -98,7 +97,7 @@
         </div>
       </fieldset>
 
-      <fieldset>
+      <fieldset class="fieldset-teams">
         <div class="scoreboard">
           <p>
             <label> Blue Team Colors </label>
@@ -136,6 +135,51 @@
           <input id="submitButton" type="submit" value="Submit">
 
         </div>
+      </fieldset>
+
+      <fieldset class="fieldset-scores">
+        <p class="aligned">
+          <label class="relative" id="textlabel">Game 1 Blue Score</label>
+          <input class="relative" data-bind="value: game1BlueScore" id="game1BlueScore" type="text" name="game1BlueScore">
+          <label class="relative" id="textlabel">Game 1 Orange Score</label>
+          <input class="relative" data-bind="value: game1OrangeScore" id="game1OrangeScore" type="text" name="game1OrangeScore">
+        </p>
+        <p class="aligned">
+          <label class="relative" id="textlabel">Game 2 Blue Score</label>
+          <input class="relative" data-bind="value: game2BlueScore" id="game2BlueScore" type="text" name="game2BlueScore">
+          <label class="relative" id="textlabel">Game 2 Orange Score</label>
+          <input class="relative" data-bind="value: game2OrangeScore" id="game2OrangeScore" type="text" name="game2OrangeScore">
+        </p>
+        <p class="aligned">
+          <label class="relative" id="textlabel">Game 3 Blue Score</label>
+          <input class="relative" data-bind="value: game3BlueScore" id="game3BlueScore" type="text" name="game3BlueScore">
+          <label class="relative" id="textlabel">Game 3 Orange Score</label>
+          <input class="relative" data-bind="value: game3OrangeScore" id="game3OrangeScore" type="text" name="game3OrangeScore">
+        </p>
+        <p class="aligned">
+          <label class="relative" id="textlabel">Game 4 Blue Score</label>
+          <input class="relative" data-bind="value: game4BlueScore" id="game4BlueScore" type="text" name="game4BlueScore">
+          <label class="relative" id="textlabel">Game 4 Orange Score</label>
+          <input class="relative" data-bind="value: game4OrangeScore" id="game4OrangeScore" type="text" name="game4OrangeScore">
+        </p>
+        <p class="aligned">
+          <label class="relative" id="textlabel">Game 5 Blue Score</label>
+          <input class="relative" data-bind="value: game5BlueScore" id="game5BlueScore" type="text" name="game5BlueScore">
+          <label class="relative" id="textlabel">Game 5 Orange Score</label>
+          <input class="relative" data-bind="value: game5OrangeScore" id="game5OrangeScore" type="text" name="game5OrangeScore">
+        </p>
+        <p class="aligned">
+          <label class="relative" id="textlabel">Game 6 Blue Score</label>
+          <input class="relative" data-bind="value: game6BlueScore" id="game6BlueScore" type="text" name="game6BlueScore">
+          <label class="relative" id="textlabel">Game 6 Orange Score</label>
+          <input class="relative" data-bind="value: game6OrangeScore" id="game6OrangeScore" type="text" name="game6OrangeScore">
+        </p>
+        <p class="aligned">
+          <label class="relative" id="textlabel">Game 7 Blue Score</label>
+          <input class="relative" data-bind="value: game7BlueScore" id="game7BlueScore" type="text" name="game7BlueScore">
+          <label class="relative" id="textlabel">Game 7 Orange Score</label>
+          <input class="relative" data-bind="value: game7OrangeScore" id="game7OrangeScore" type="text" name="game7OrangeScore">
+        </p>
       </fieldset>
     </div>
   </form>

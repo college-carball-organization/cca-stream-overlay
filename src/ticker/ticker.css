@@ -20,6 +20,12 @@ span {
   color: white;
 }
 
+#divpanel > * {
+  margin: 0;
+  padding: 0;
+  position: absolute;
+}
+
 #divTextScroll {
   left: 66px;
   top: 1046px;

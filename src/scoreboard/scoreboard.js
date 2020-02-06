@@ -14,14 +14,12 @@ var viewModel = {
 viewModel.blueTextColor = ko.pureComputed(function() {
   rgb = hexToRgb(viewModel.blueColorPrimary());
   contrast = getColorContrast(rgb);
-  console.log(`rgb: ${JSON.stringify(rgb)}\ncontrast: ${contrast}`);
   return contrast > 125 ? "#000000" : "#FFFFFF";
 });
 
 viewModel.orangeTextColor = ko.pureComputed(function() {
   rgb = hexToRgb(viewModel.orangeColorPrimary());
   contrast = getColorContrast(rgb);
-  console.log(`rgb: ${JSON.stringify(rgb)}\ncontrast: ${contrast}`);
   return contrast > 125 ? "#000000" : "#FFFFFF";
 });
 
