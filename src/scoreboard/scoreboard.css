@@ -22,10 +22,12 @@
   --scorebug-team-name-width: 225px;
   --scorebug-team-wins-width: 40px;
 
-  /*
+  /* Default values changed because Ben's computer is a dumb and apparently works without them.
   --scorebug-font-vertical-offset: 7px;
   --scorebug-bottom-font-vertical-offset: 3px;
   */
+  --scorebug-font-vertical-offset: 0px;
+  --scorebug-bottom-font-vertical-offset: 0px;
   
   --scorebug-wins-right-offset: 3px;
 }

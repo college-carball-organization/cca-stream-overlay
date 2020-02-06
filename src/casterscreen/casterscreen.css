@@ -9,6 +9,21 @@
   --main-container-bottom-indent: 104px;
   --squiggle-shift: 295px;
   --mask-shift: 310px;
+
+  /* Default values changed because Ben's computer is a dumb and apparently works without them.
+  --scoreboard-team-text-padding-top: 11px:
+  --game-header-text-padding-top: 3px;
+  --game-score-text-padding-top: 3px;
+  --scorecard-best-of-series-padding-top: 3px;
+  --team-panel-team-name-padding-top: 5px;
+  --team-panel-player-names-padding-top: 15px;
+  */
+  --scoreboard-team-text-padding-top: 0px;
+  --game-header-text-padding-top: 0px;
+  --game-score-text-padding-top: 0px;
+  --scorecard-best-of-series-padding-top: 0px;
+  --team-panel-team-name-padding-top: 0px;
+  --team-panel-player-names-padding-top: 0px;
 }
 
 #divpanel {
@@ -70,13 +85,13 @@
 .score-card-team-name {
   font-size: 64px;
   margin-left: 20px;
-  padding-top: 11px;
+  padding-top: var(--scoreboard-team-text-padding-top);
 }
 
 .score-card-team-wins {
   font-size: 64px;
   margin-right: 15px;
-  padding-top: 11px;
+  padding-top: var(--scoreboard-team-text-padding-top);
   z-index: 50;
 }
 
@@ -112,7 +127,7 @@
 .game-header {
   font-size: 26px;
   color: white;
-  padding-top: 3px;
+  padding-top: var(--game-header-text-padding-top);
   width: 45px;
   text-align: center;
 }
@@ -120,7 +135,7 @@
 .game-score {
   font-size: 44px;
   color: black;
-  padding-top: 3px;
+  padding-top: var(--game-score-text-padding-top);
   width: 45px;
   text-align: center;
 }
@@ -154,7 +169,7 @@
 }
 
 .best-of-series-text {
-  padding-top: 3px;
+  padding-top: var(--scorecard-best-of-series-padding-top);
 }
 
 .orange-team-header {
@@ -183,6 +198,10 @@
 .blue-team-card {
   background-color: yellow;
   flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  align-items: stretch;
 }
 
 .blue-team-name {
@@ -191,7 +210,7 @@
 
 .blue-team-name-text {
   font-size: 108px;
-  padding-top: 5px;
+  padding-top: var(--team-panel-team-name-padding-top);
   margin-left: 20px;
 }
 
@@ -201,17 +220,22 @@
 }
 
 .blue-team-players {
+  flex: 1;
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
   align-items: stretch;
   padding-left: 45px;
-  padding-top: 15px;
+  padding-top:var(--team-panel-player-names-padding-top);
 }
 
 .orange-team-card {
   background-color: blue;
   flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  align-items: stretch;
 }
 
 .orange-team-name {
@@ -222,7 +246,7 @@
 
 .orange-team-name-text {
   font-size: 108px;
-  padding-top: 5px;
+  padding-top: var(--team-panel-team-name-padding-top);
   margin-right: 20px;
 }
 
@@ -232,12 +256,13 @@
 }
 
 .orange-team-players {
+  flex: 1;
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
   align-items: flex-end;
   padding-right: 45px;
-  padding-top: 15px;
+  padding-top: var(--team-panel-player-names-padding-top);
 }
 
 .player-name {
