@@ -101,6 +101,7 @@ div {
   margin-right: var(--scorebug-wins-right-offset);
   padding-top: var(--scorebug-font-vertical-offset);
   width: var(--scorebug-team-wins-width);
+  z-index: 200;
 }
 
 #orange-team-div {
@@ -128,6 +129,7 @@ div {
   margin-right: var(--scorebug-wins-right-offset);
   padding-top: var(--scorebug-font-vertical-offset);
   width: var(--scorebug-team-wins-width);
+  z-index: 200;
 }
 
 #scorebug-bottom-div {

@@ -34,28 +34,14 @@ viewModel.blueColorSecondary.subscribe(function(newValue) {
   if (!newValue) {
     return;
   }
-
-  var { r, g, b } = hexToRgb(newValue);
-
-  const color = new Color(r, g, b);
-  const solver = new Solver(color);
-  const result = solver.solve();
-
-  $("#home-team-separator").attr("style", result.filter);
+  updateBlueTeamSquiggle(newValue);
 });
 
 viewModel.orangeColorSecondary.subscribe(function(newValue) {
   if (!newValue) {
     return;
   }
-
-  var { r, g, b } = hexToRgb(newValue);
-
-  const color = new Color(r, g, b);
-  const solver = new Solver(color);
-  const result = solver.solve();
-
-  $("#away-team-separator").attr("style", result.filter);
+  updateOrangeTeamSquiggle(newValue);
 });
 
 $(document).ready(function() {
@@ -65,6 +51,8 @@ $(document).ready(function() {
   });
 
   ko.applyBindings(viewModel);
+  updateBlueTeamSquiggle(viewModel.blueColorSecondary());
+  updateOrangeTeamSquiggle(viewModel.orangeColorSecondary());
 });
 
 function processData(data) {
@@ -95,6 +83,22 @@ window.setInterval(function() {
 }, autoUpdateTime);
 
 // Helper functions ------------------------------------------------------------
+
+function updateBlueTeamSquiggle(hexColor) {
+  var { r, g, b } = hexToRgb(hexColor);
+  const color = new Color(r, g, b);
+  const solver = new Solver(color);
+  const result = solver.solve();
+  $("#home-team-separator").attr("style", result.filter);
+}
+
+function updateOrangeTeamSquiggle(hexColor) {
+  var { r, g, b } = hexToRgb(hexColor);
+  const color = new Color(r, g, b);
+  const solver = new Solver(color);
+  const result = solver.solve();
+  $("#away-team-separator").attr("style", result.filter);
+}
 
 function hexToRgb(hex) {
   // Expand shorthand form (e.g. "03F") to full form (e.g. "0033FF")
