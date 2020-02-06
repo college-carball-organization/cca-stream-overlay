@@ -3,6 +3,13 @@
   src: url('../res/Uni Sans Heavy.otf');
 }
 
+:root {
+  /* Ben's computer don't nee no top padding!
+  --team-name-padding-top: 15px;
+  */
+  --team-name-padding-top: 0px;
+}
+
 #divpanel {
   display: flex;
   flex-direction: column;
@@ -31,7 +38,7 @@
 #blue-team-name {
   font-size: 108px;
   padding-left: 20px;
-  padding-top: 15px;
+  padding-top: var(--team-name-padding-top);
 }
 
 #orange-team-container {
@@ -45,5 +52,5 @@
 #orange-team-name {
   font-size: 108px;
   padding-right: 20px;
-  padding-top: 15px;
+  padding-top: var(--team-name-padding-top);
 }
