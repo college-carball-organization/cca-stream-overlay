@@ -6,7 +6,6 @@
 :root {
   --scorebug-top-offset: 66px;
   --scorebug-left-offset: 65px;
-
   --scorebug-team-bar-height: 57px;
   --scorebug-team-bar-width: 310px;
   --scorebug-team-mask-left-offset: 221px;
@@ -15,10 +14,8 @@
   --scorebug-team-separator-left-offset: 211px;
   --scorebug-bottom-height: 29px;
   --scorebug-bottom-wall-offset: 40px;
-
   --scorebug-team-font-size: 28pt;
   --scorebug-bottom-font-size: 16pt;
-
   --scorebug-team-name-width: 225px;
   --scorebug-team-wins-width: 40px;
 
@@ -28,7 +25,6 @@
   */
   --scorebug-font-vertical-offset: 0px;
   --scorebug-bottom-font-vertical-offset: 0px;
-  
   --scorebug-wins-right-offset: 3px;
 }
 
@@ -50,8 +46,8 @@ div {
 }
 
 #away-team-box {
-  left: var(--scorebug-left-offset);
-  top: calc(var(--scorebug-top-offset) + var(--scorebug-team-bar-height));
+  left: calc(var(--scorebug-left-offset) + var(--scorebug-team-bar-width));
+  top: var(--scorebug-top-offset);
   width: var(--scorebug-team-bar-width);
   height: var(--scorebug-team-bar-height);
 }
@@ -64,8 +60,8 @@ div {
 
 #scorebug-bar-masks-away {
   z-index: 50;
-  left: calc(var(--scorebug-left-offset) + var(--scorebug-team-mask-left-offset));
-  top: calc(var(--scorebug-top-offset) + var(--scorebug-team-bar-height) + var(--scorebug-team-mask-top-offset));
+  left: calc(var(--scorebug-left-offset) + var(--scorebug-team-bar-width) + var(--scorebug-team-mask-left-offset));
+  top: calc(var(--scorebug-top-offset) + var(--scorebug-team-mask-top-offset));
 }
 
 #home-team-separator {
@@ -76,8 +72,8 @@ div {
 
 #away-team-separator {
   z-index: 100;
-  left: calc(var(--scorebug-left-offset) + var(--scorebug-team-separator-left-offset));
-  top: calc(var(--scorebug-top-offset) + var(--scorebug-team-bar-height) + var(--scorebug-team-separator-top-offset));
+  left: calc(var(--scorebug-left-offset) + var(--scorebug-team-separator-left-offset) + var(--scorebug-team-bar-width));
+  top: calc(var(--scorebug-top-offset) + var(--scorebug-team-separator-top-offset));
 }
 
 #blue-team-div {
@@ -97,6 +93,9 @@ div {
   padding-left: 15px;
   padding-top: var(--scorebug-font-vertical-offset);
   width: var(--scorebug-team-name-width);
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: clip;
 }
 
 #divBlueWins {
@@ -110,8 +109,8 @@ div {
 
 #orange-team-div {
   font-family: 'Uni Sans Heavy';
-  left: var(--scorebug-left-offset);
-  top: calc(var(--scorebug-top-offset) + var(--scorebug-team-bar-height));
+  left: calc(var(--scorebug-left-offset) + var(--scorebug-team-bar-width));
+  top: var(--scorebug-top-offset);
   width: var(--scorebug-team-bar-width);
   height: var(--scorebug-team-bar-height);
   display: flex;
