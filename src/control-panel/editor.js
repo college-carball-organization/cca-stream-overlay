@@ -43,13 +43,13 @@ var viewModel = {
   orangeSecondary: ko.observable("#000000"),
 
   tickerSpeed: ko.observable(40),
-  tickerText: ko.observable("Ticker text")
+  tickerText: ko.observable("Ticker text"),
 };
 
-$(document).ready(function() {
+$(document).ready(function () {
   // Set the view model(and thus the intial form text)
   //  from the previous data
-  $.getJSON("../data.json", function(data) {
+  $.getJSON("../data.json", function (data) {
     processData(data);
   });
 
@@ -100,11 +100,11 @@ function processData(data) {
   viewModel.tickerSpeed(data.tickerSpeed);
 }
 
-var autoUpdateTime = 250; // in milliseconds
+var autoUpdateTime = 1000; // in milliseconds
 
 // Submit form data using AJAX instead of normal html form submit
-$(function() {
-  $("#control-panel-form").on("submit", function(e) {
+$(function () {
+  $("#control-panel-form").on("submit", function (e) {
     e.preventDefault(); // avoid to execute the actual submit of the form.
 
     var form = $(this);
@@ -114,9 +114,9 @@ $(function() {
       type: "POST",
       url: url,
       data: form.serialize(), // serializes the form's elements.
-      success: function(data) {
+      success: function (data) {
         alert(data); // show response from the php script.
-      }
+      },
     });
   });
 });

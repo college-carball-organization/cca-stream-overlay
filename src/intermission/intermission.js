@@ -2,24 +2,24 @@ var viewModel = {
   blueName: ko.observable("Blue Name"),
   orangeName: ko.observable("Orange Name"),
   blueColorPrimary: ko.observable("#000000"),
-  orangeColorPrimary: ko.observable("#FFFFFF")
+  orangeColorPrimary: ko.observable("#FFFFFF"),
 };
 
-viewModel.blueTextColor = ko.pureComputed(function() {
+viewModel.blueTextColor = ko.pureComputed(function () {
   rgb = hexToRgb(viewModel.blueColorPrimary());
   contrast = getColorContrast(rgb);
   return contrast > 125 ? "#000000" : "#FFFFFF";
 });
 
-viewModel.orangeTextColor = ko.pureComputed(function() {
+viewModel.orangeTextColor = ko.pureComputed(function () {
   rgb = hexToRgb(viewModel.orangeColorPrimary());
   contrast = getColorContrast(rgb);
   return contrast > 125 ? "#000000" : "#FFFFFF";
 });
 
-$(document).ready(function() {
+$(document).ready(function () {
   // Retrieve the scoreboard data file
-  $.getJSON("../data.json", function(data) {
+  $.getJSON("../data.json", function (data) {
     processData(data);
   });
 
@@ -34,10 +34,10 @@ function processData(data) {
   viewModel.orangeColorPrimary(data.orangePrimary);
 }
 
-var autoUpdateTime = 500; // in milliseconds
+var autoUpdateTime = 1000; // in milliseconds
 
-window.setInterval(function() {
-  $.getJSON("../data.json", function(data) {
+window.setInterval(function () {
+  $.getJSON("../data.json", function (data) {
     processData(data);
   });
 }, autoUpdateTime);
@@ -47,7 +47,7 @@ window.setInterval(function() {
 function hexToRgb(hex) {
   // Expand shorthand form (e.g. "03F") to full form (e.g. "0033FF")
   var shorthandRegex = /^#?([a-f\d])([a-f\d])([a-f\d])$/i;
-  hex = hex.replace(shorthandRegex, function(m, r, g, b) {
+  hex = hex.replace(shorthandRegex, function (m, r, g, b) {
     return r + r + g + g + b + b;
   });
 
@@ -56,7 +56,7 @@ function hexToRgb(hex) {
     ? {
         r: parseInt(result[1], 16),
         g: parseInt(result[2], 16),
-        b: parseInt(result[3], 16)
+        b: parseInt(result[3], 16),
       }
     : null;
 }

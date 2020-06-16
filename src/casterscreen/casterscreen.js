@@ -37,52 +37,52 @@ var viewModel = {
   game7BlueScore: ko.observable("0"),
   game7OrangeScore: ko.observable("0"),
 
-  seriesLength: ko.observable("BEST OF 0")
+  seriesLength: ko.observable("BEST OF 0"),
 };
 
-viewModel.blueTextColor = ko.pureComputed(function() {
+viewModel.blueTextColor = ko.pureComputed(function () {
   rgb = hexToRgb(viewModel.blueColorPrimary());
   contrast = getColorContrast(rgb);
   return contrast > 125 ? "#000000" : "#FFFFFF";
 });
 
-viewModel.orangeTextColor = ko.pureComputed(function() {
+viewModel.orangeTextColor = ko.pureComputed(function () {
   rgb = hexToRgb(viewModel.orangeColorPrimary());
   contrast = getColorContrast(rgb);
   return contrast > 125 ? "#000000" : "#FFFFFF";
 });
 
-viewModel.gameCount = ko.pureComputed(function() {
+viewModel.gameCount = ko.pureComputed(function () {
   return (
     "" + (parseInt(viewModel.blueWins()) + parseInt(viewModel.orangeWins()))
   );
 });
 
-viewModel.blueColorSecondary.subscribe(function(newValue) {
+viewModel.blueColorSecondary.subscribe(function (newValue) {
   if (!newValue) {
     return;
   }
   updateBlueTeamSquiggle(newValue);
 });
 
-viewModel.orangeColorSecondary.subscribe(function(newValue) {
+viewModel.orangeColorSecondary.subscribe(function (newValue) {
   if (!newValue) {
     return;
   }
   updateOrangeTeamSquiggle(newValue);
 });
 
-viewModel.gameCount.subscribe(function(newValue) {
+viewModel.gameCount.subscribe(function (newValue) {
   if (!newValue) {
     return;
   }
   buildScoreCard(newValue);
 });
 
-$(function() {
+$(function () {
   // Get all of the data from the Editor
   // And fill in all of the forms
-  $.getJSON("../data.json", function(data) {
+  $.getJSON("../data.json", function (data) {
     processData(data);
   });
 
@@ -146,10 +146,10 @@ function processData(data) {
   viewModel.seriesLength("BEST OF " + data.bestOf);
 }
 
-var autoUpdateTime = 500; // in milliseconds
+var autoUpdateTime = 1000; // in milliseconds
 
-window.setInterval(function() {
-  $.getJSON("../data.json", function(data) {
+window.setInterval(function () {
+  $.getJSON("../data.json", function (data) {
     processData(data);
   });
 }, autoUpdateTime);
@@ -163,11 +163,11 @@ function buildScoreCard(gameCount) {
     $(`#game-header-${i}`).css({ position: "absolute", visibility: "hidden" });
     $(`#blue-game-score-${i}`).css({
       position: "absolute",
-      visibility: "hidden"
+      visibility: "hidden",
     });
     $(`#orange-game-score-${i}`).css({
       position: "absolute",
-      visibility: "hidden"
+      visibility: "hidden",
     });
   }
 
@@ -175,11 +175,11 @@ function buildScoreCard(gameCount) {
     $(`#game-header-${i}`).css({ position: "relative", visibility: "visible" });
     $(`#blue-game-score-${i}`).css({
       position: "relative",
-      visibility: "visible"
+      visibility: "visible",
     });
     $(`#orange-game-score-${i}`).css({
       position: "relative",
-      visibility: "visible"
+      visibility: "visible",
     });
   }
 }
@@ -205,7 +205,7 @@ function updateOrangeTeamSquiggle(hexColor) {
 function hexToRgb(hex) {
   // Expand shorthand form (e.g. "03F") to full form (e.g. "0033FF")
   var shorthandRegex = /^#?([a-f\d])([a-f\d])([a-f\d])$/i;
-  hex = hex.replace(shorthandRegex, function(m, r, g, b) {
+  hex = hex.replace(shorthandRegex, function (m, r, g, b) {
     return r + r + g + g + b + b;
   });
 
@@ -214,7 +214,7 @@ function hexToRgb(hex) {
     ? {
         r: parseInt(result[1], 16),
         g: parseInt(result[2], 16),
-        b: parseInt(result[3], 16)
+        b: parseInt(result[3], 16),
       }
     : null;
 }
@@ -258,7 +258,7 @@ class Color {
       0.072 - cos * 0.072 - sin * 0.283,
       0.213 - cos * 0.213 - sin * 0.787,
       0.715 - cos * 0.715 + sin * 0.715,
-      0.072 + cos * 0.928 + sin * 0.072
+      0.072 + cos * 0.928 + sin * 0.072,
     ]);
   }
 
@@ -272,7 +272,7 @@ class Color {
       0.0722 - 0.0722 * (1 - value),
       0.2126 - 0.2126 * (1 - value),
       0.7152 - 0.7152 * (1 - value),
-      0.0722 + 0.9278 * (1 - value)
+      0.0722 + 0.9278 * (1 - value),
     ]);
   }
 
@@ -286,7 +286,7 @@ class Color {
       0.168 - 0.168 * (1 - value),
       0.272 - 0.272 * (1 - value),
       0.534 - 0.534 * (1 - value),
-      0.131 + 0.869 * (1 - value)
+      0.131 + 0.869 * (1 - value),
     ]);
   }
 
@@ -300,7 +300,7 @@ class Color {
       0.072 - 0.072 * value,
       0.213 - 0.213 * value,
       0.715 - 0.715 * value,
-      0.072 + 0.928 * value
+      0.072 + 0.928 * value,
     ]);
   }
 
@@ -373,7 +373,7 @@ class Color {
     return {
       h: h * 100,
       s: s * 100,
-      l: l * 100
+      l: l * 100,
     };
   }
 
@@ -399,7 +399,7 @@ class Solver {
     return {
       values: result.values,
       loss: result.loss,
-      filter: this.css(result.values)
+      filter: this.css(result.values),
     };
   }
 

@@ -1,11 +1,11 @@
 var viewModel = {
   //tickerText: ko.observable("NEU 1 - OSU 2: Game 4  |  LSU 0 - TAMU A 3: Final  |  Follow us on Twitter at @CollegeCarball  |  Soopy Sucks  | Follow Bdawg on twitter. @Bdawg8RL | "),
-  tickerText: ko.observable("")
-}
+  tickerText: ko.observable(""),
+};
 
-$(document).ready(function() {
-  $.getJSON("../data.json", function(data) {
-    processData(data)
+$(document).ready(function () {
+  $.getJSON("../data.json", function (data) {
+    processData(data);
   });
 
   ko.applyBindings(viewModel);
@@ -16,22 +16,25 @@ function processData(data) {
 
   var tickerDuration = calcDuration(data.tickerSpeed);
 
-  $(".marquee span").css("animation-duration", (tickerDuration.toString() + "s"))
-  $(".marquee2 span").css("animation-delay", ((tickerDuration / 2).toString() + "s"))
+  $(".marquee span").css("animation-duration", tickerDuration.toString() + "s");
+  $(".marquee2 span").css(
+    "animation-delay",
+    (tickerDuration / 2).toString() + "s"
+  );
 }
 
-var autoUpdateTime = 5 * 100 // in milliseconds
+var autoUpdateTime = 1000; // in milliseconds
 
-window.setInterval(function() {
-  $.getJSON("../data.json", function(data) {
-    processData(data)
+window.setInterval(function () {
+  $.getJSON("../data.json", function (data) {
+    processData(data);
   });
-}, autoUpdateTime)
+}, autoUpdateTime);
 
 function calcDuration(speed) {
-  var spanSelector = $("#tickerText2")
-  var spanLength = spanSelector.width()
-  var timeTaken = spanLength / speed
+  var spanSelector = $("#tickerText2");
+  var spanLength = spanSelector.width();
+  var timeTaken = spanLength / speed;
 
-  return timeTaken
+  return timeTaken;
 }
