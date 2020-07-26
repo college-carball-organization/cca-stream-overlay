@@ -44,7 +44,7 @@
     $myObj->tickerText = $_POST['tickerText'];
     $myObj->tickerSpeed = $_POST['tickerSpeed'];
 
-    $myObj->title = $_POST['title'];
+    $myObj->eventTitle = $_POST['eventTitle'];
 
     $myJSON = json_encode($myObj);
 
