@@ -44,6 +44,8 @@ var viewModel = {
 
   tickerSpeed: ko.observable(40),
   tickerText: ko.observable("Ticker text"),
+
+  title: ko.observable(""),
 };
 
 $(document).ready(function () {
@@ -98,6 +100,8 @@ function processData(data) {
 
   viewModel.tickerText(data.tickerText);
   viewModel.tickerSpeed(data.tickerSpeed);
+
+  viewModel.title(data.title);
 }
 
 var autoUpdateTime = 1000; // in milliseconds

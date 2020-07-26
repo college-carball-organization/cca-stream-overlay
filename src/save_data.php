@@ -44,6 +44,8 @@
     $myObj->tickerText = $_POST['tickerText'];
     $myObj->tickerSpeed = $_POST['tickerSpeed'];
 
+    $myObj->title = $_POST['title'];
+
     $myJSON = json_encode($myObj);
 
     // Write json data into data.json file
