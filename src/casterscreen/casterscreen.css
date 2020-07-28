@@ -206,12 +206,17 @@
 
 .blue-team-name {
   height: 114px;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: flex-end;
 }
 
-.blue-team-name-text {
+#blue-team-name-text {
   font-size: 108px;
   padding-top: var(--team-panel-team-name-padding-top);
   margin-left: 20px;
+  line-height: 0.9;
 }
 
 .blue-team-separator {
@@ -242,12 +247,14 @@
   height: 114px;
   display: flex;
   justify-content: flex-end;
+  align-items: flex-end;
 }
 
-.orange-team-name-text {
+#orange-team-name-text {
   font-size: 108px;
   padding-top: var(--team-panel-team-name-padding-top);
   margin-right: 20px;
+  line-height: 0.9;
 }
 
 .orange-team-separator {

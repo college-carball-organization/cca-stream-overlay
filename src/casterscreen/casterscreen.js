@@ -58,6 +58,38 @@ viewModel.gameCount = ko.pureComputed(function () {
   );
 });
 
+viewModel.blueName.subscribe(function (newValue) {
+  if (!newValue) {
+    return;
+  }
+
+  const uppercase_name = newValue.toUpperCase();
+
+  // Update score card
+  const score_card_font_size = calculateIdealScoreCardTeamNameFontSize(uppercase_name);
+  $('#blue-team-score-card-name').css('font-size', `${score_card_font_size}px`);
+
+  // Update roster card
+  const roster_card_font_size = calculateIdealRosterCardTeamNameFontSize(uppercase_name);
+  $('#blue-team-name-text').css('font-size', `${roster_card_font_size}px`);
+});
+
+viewModel.orangeName.subscribe(function (newValue) {
+  if (!newValue) {
+    return;
+  }
+
+  const uppercase_name = newValue.toUpperCase();
+
+  // Update score card
+  const score_card_font_size = calculateIdealScoreCardTeamNameFontSize(uppercase_name);
+  $('#orange-team-score-card-name').css('font-size', `${score_card_font_size}px`);
+
+  // Update roster card
+  const roster_card_font_size = calculateIdealRosterCardTeamNameFontSize(uppercase_name);
+  $('#orange-team-name-text').css('font-size', `${roster_card_font_size}px`);
+});
+
 viewModel.blueColorSecondary.subscribe(function (newValue) {
   if (!newValue) {
     return;
@@ -516,4 +548,48 @@ class Solver {
       5
     )}%);`;
   }
+}
+
+
+/*******************************************************************************
+ * Text resizing
+ ******************************************************************************/
+
+/**
+ * Uses canvas.measureText to compute and return the width of the given text of given font in pixels.
+ * 
+ * @param {String} text The text to be rendered.
+ * @param {String} font The css font descriptor that text is to be rendered with (e.g. "bold 14px verdana").
+ * 
+ * @see https://stackoverflow.com/questions/118241/calculate-text-width-with-javascript/21015393#21015393
+ */
+function getTextWidth(text, font) {
+  // re-use canvas object for better performance
+  var canvas = getTextWidth.canvas || (getTextWidth.canvas = document.createElement("canvas"));
+  var context = canvas.getContext("2d");
+  context.font = font;
+  var metrics = context.measureText(text);
+  return metrics.width;
+}
+
+function getOptimalFontSize(content, max_width, initial_font_size, font_family) {
+  let font_size = initial_font_size;
+  while( getTextWidth(content, `${font_size}px ${font_family}`) > max_width) {
+      font_size -= 1;
+  }
+  return font_size;
+}
+
+function calculateIdealScoreCardTeamNameFontSize(text) {
+  const MAX_LENGTH = 300; // pixels
+  const INITIAL_FONT_SIZE = 64; // pixels
+  const FONT_FAMILY = 'Uni Sans Heavy';
+  return getOptimalFontSize(text, MAX_LENGTH, INITIAL_FONT_SIZE, FONT_FAMILY);
+}
+
+function calculateIdealRosterCardTeamNameFontSize(text) {
+  const MAX_LENGTH = 630; // pixels
+  const INITIAL_FONT_SIZE = 108; // pixels
+  const FONT_FAMILY = 'Uni Sans Heavy';
+  return getOptimalFontSize(text, MAX_LENGTH, INITIAL_FONT_SIZE, FONT_FAMILY);
 }
