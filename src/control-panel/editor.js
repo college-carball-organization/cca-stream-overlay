@@ -46,6 +46,9 @@ var viewModel = {
   tickerText: ko.observable("Ticker text"),
 
   eventTitle: ko.observable(""),
+
+  blueStanding: ko.observable(""),
+  orangeStanding: ko.observable(""),
 };
 
 $(document).ready(function () {
@@ -102,6 +105,9 @@ function processData(data) {
   viewModel.tickerSpeed(data.tickerSpeed);
 
   viewModel.eventTitle(data.eventTitle);
+
+  viewModel.blueStanding(data.blueStanding);
+  viewModel.orangeStanding(data.orangeStanding);
 }
 
 var autoUpdateTime = 1000; // in milliseconds
