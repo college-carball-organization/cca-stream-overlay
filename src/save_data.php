@@ -46,6 +46,9 @@
 
     $myObj->eventTitle = $_POST['eventTitle'];
 
+    $myObj->blueStanding = $_POST['blueStanding'];
+    $myObj->orangeStanding = $_POST['orangeStanding'];
+
     $myJSON = json_encode($myObj);
 
     // Write json data into data.json file
