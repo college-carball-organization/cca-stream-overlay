@@ -11,7 +11,20 @@ These processes previously took up a majority of the time for the broadcasters w
 ## Libraries Used:
   - jQuery
   - [KnockoutJS](https://knockoutjs.com/)
-  
+
+## Development
+To start the development docker container run the following (docker-compose).
+```
+docker-compose -f docker-compose.dev.yml up -d
+```
+
+You can access the overlay-panel at `localhost:4000`
+
+And to take it down type
+```
+docker-compose -f docker-compose.dev.yml down
+```
+
 ## About
 The [College Carball Association](http://collegecarball.net/) is a collegiate community centered around the video game [Rocket League](https://www.rocketleague.com/). The CCA currently has 148 registered chapters and over 2400 members. 
   
