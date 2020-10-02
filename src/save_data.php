@@ -54,7 +54,7 @@
       header("Location: https://prod.cca.gg/control-panel/index.html");
       exit();
     } else {
-      //echo 'Error';
+      echo 'Error';
     }
   } catch(Exception $e) {
     echo 'Caught Exception: ', $e->getMessage(), '\n';
