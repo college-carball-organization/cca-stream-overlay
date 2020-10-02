@@ -1,4 +1,4 @@
-FROM richarvey/nginx-php-fpm
+FROM richarvey/nginx-php-fpm:1.10.3
 
 # Remove default nginx static files
 RUN rm -rf /usr/share/nginx/html/* /var/www/html/*
