@@ -18,10 +18,18 @@
           
           <div class="scorecard-team-names">
             <div class="scorecard-team-name scorecard-blue-team" data-bind="style: { 'background-color': blueColorPrimary(), 'color': blueTextColor() }">
-              <div id="blue-team-score-card-name" class="scorecard-team-name-text" data-bind="text: blueName"></div>
+              <div id="blue-team-score-card-name" class="scorecard-team-name-text" data-bind="text: blueName, style: { color: blueTextColor() }"></div>
+              <div class="scorecard-swoosh" data-bind="style: { 'background-color': blueColorSecondary() }"></div>
+              <div class="series-score">
+                <div class="series-score-text" data-bind="text: blueWins, style: { color: blueTextColor() }"></div>
+              </div>
             </div>
             <div class="scorecard-team-name scorecard-orange-team" data-bind="style: { 'background-color': orangeColorPrimary(), 'color': orangeTextColor() }">
-              <div id="orange-team-score-card-name" class="scorecard-team-name-text" data-bind="text: orangeName"></div>
+              <div id="orange-team-score-card-name" class="scorecard-team-name-text" data-bind="text: orangeName, style: { color: orangeTextColor() }"></div>
+              <div class="scorecard-swoosh" data-bind="style: { 'background-color': orangeColorSecondary() }"></div>
+              <div class="series-score">
+                <div class="series-score-text" data-bind="text: orangeWins, style: { color: orangeTextColor() }"></div>
+              </div>
             </div>
           </div>
 
