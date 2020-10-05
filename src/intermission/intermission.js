@@ -3,6 +3,8 @@ var viewModel = {
   orangeName: ko.observable("Orange Name"),
   blueColorPrimary: ko.observable("#000000"),
   orangeColorPrimary: ko.observable("#FFFFFF"),
+  blueStanding: ko.observable(""),
+  orangeStanding: ko.observable(""),
 };
 
 viewModel.blueTextColor = ko.pureComputed(function () {
@@ -52,6 +54,8 @@ function processData(data) {
   viewModel.orangeName(data.orangeName);
   viewModel.blueColorPrimary(data.bluePrimary);
   viewModel.orangeColorPrimary(data.orangePrimary);
+  viewModel.blueStanding(data.blueStanding);
+  viewModel.orangeStanding(data.orangeStanding);
 }
 
 var autoUpdateTime = 1000; // in milliseconds

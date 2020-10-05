@@ -3,54 +3,51 @@
   src: url('../res/Uni Sans Heavy.otf');
 }
 
-:root {
-  /* Ben's computer don't nee no top padding!
-  --team-name-padding-top: 15px;
-  */
-  --team-name-padding-top: 0px;
+@font-face {
+  font-family: 'Uni Sans SemiBold Italic';
+  src: url('../res/Uni Sans SemiBold Italic.otf');
 }
 
-#divpanel {
+#view-box {
+  width: 1920px;
+  height: 1080px;
+  margin: 0;
+  padding: 0;
+}
+
+.teams-container {
+  position: absolute;
+  right: 0;
+  top: 500px;
+  height: 188px;
+  width: 588px;
+  border-radius: 7px 0 0 7px;
+  overflow: hidden;
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  align-items: center;
-}
-
-.team-container {
-  font-family: 'Uni Sans Heavy';
-  height: 130px;
-  width: 1300px;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
+  justify-content: flex-start;
   align-items: stretch;
 }
 
-#blue-team-container {
-  flex: 1;
-  display: flex;
-  flex-direction: row;
-  justify-content: flex-start;
-  align-items: center;
-}
-
-#blue-team-name {
-  font-size: 108px;
-  padding-left: 20px;
-  padding-top: var(--team-name-padding-top);
-}
-
-#orange-team-container {
-  flex: 1;
+.team-container {
+  position: relative;
+  height: 94px;
   display: flex;
   flex-direction: row;
   justify-content: flex-end;
   align-items: center;
 }
 
-#orange-team-name {
-  font-size: 108px;
-  padding-right: 20px;
-  padding-top: var(--team-name-padding-top);
+.team-name {
+  margin-right: 106px;
+  font-family: "Uni Sans Heavy";
+  font-size: 67px;
+}
+
+.team-standing {
+  position: absolute;
+  right: 12px;
+  top: 44px;
+  font-family: "Uni Sans SemiBold Italic";
+  font-size: 39px;
 }
