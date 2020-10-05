@@ -5,4 +5,10 @@ services:
     ports:
       - "4000:80"
     volumes:
-      - ./src:/var/www/html
+      - ./src/casterscreen:/var/www/html/casterscreen:ro
+      - ./src/control-panel:/var/www/html/control-panel:ro
+      - ./src/intermission:/var/www/html/intermission:ro
+      - ./src/lib:/var/www/html/lib:ro
+      - ./src/res:/var/www/html/res:ro
+      - ./src/scoreboard:/var/www/html/scoreboard:ro
+      - ./src/ticker:/var/www/html/ticker:ro
