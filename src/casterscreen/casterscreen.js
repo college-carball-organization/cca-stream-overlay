@@ -9,6 +9,7 @@ var viewModel = {
   blueP4: ko.observable(),
   blueP5: ko.observable(),
   blueWins: ko.observable("0"),
+  blueStanding: ko.observable("0-0"),
   blueColorPrimary: ko.observable("#000000"),
   blueColorSecondary: ko.observable("#FFFFFF"),
 
@@ -19,6 +20,7 @@ var viewModel = {
   orangeP4: ko.observable(),
   orangeP5: ko.observable(),
   orangeWins: ko.observable("0"),
+  orangeStanding: ko.observable("0-0"),
   orangeColorPrimary: ko.observable("#FFFFFF"),
   orangeColorSecondary: ko.observable("#000000"),
 
@@ -589,7 +591,7 @@ function calculateIdealScoreCardTeamNameFontSize(text) {
 
 function calculateIdealRosterCardTeamNameFontSize(text) {
   const MAX_LENGTH = 630; // pixels
-  const INITIAL_FONT_SIZE = 108; // pixels
+  const INITIAL_FONT_SIZE = 46; // pixels
   const FONT_FAMILY = 'Uni Sans Heavy';
   return getOptimalFontSize(text, MAX_LENGTH, INITIAL_FONT_SIZE, FONT_FAMILY);
 }
