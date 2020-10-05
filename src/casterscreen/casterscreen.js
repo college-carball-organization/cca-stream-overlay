@@ -160,6 +160,10 @@ function processData(data) {
   viewModel.blueWins(data.blueWins);
   viewModel.orangeWins(data.orangeWins);
 
+  // Update standings
+  viewModel.blueStanding(data.blueStanding);
+  viewModel.orangeStanding(data.orangeStanding);
+
   // Update scores
   viewModel.game1BlueScore(data.game1BlueScore);
   viewModel.game1OrangeScore(data.game1OrangeScore);
@@ -191,27 +195,23 @@ window.setInterval(function () {
 function buildScoreCard(gameCount) {
   var MAX_COLUMNS = 7;
 
-  console.log("gameCount: " + gameCount);
-
+  // Hide everything
   for (var i = 1; i <= MAX_COLUMNS; ++i) {
-    $(`#game-header-${i}`).css({ position: "absolute", visibility: "hidden" });
-    $(`#blue-game-score-${i}`).css({
-      position: "absolute",
-      visibility: "hidden",
-    });
-    $(`#orange-game-score-${i}`).css({
+    $(`#scorecard-gamescores-header-${i}`).css({ position: "absolute", visibility: "hidden" });
+    $(`#game-score-${i}`).css({
       position: "absolute",
       visibility: "hidden",
     });
   }
+  $('#score-card').css({ visibility: "hidden" });
 
+  // Show only necessary scores
+  if (parseInt(gameCount) > 0) {
+    $('#score-card').css({ visibility: "visible" });
+  }
   for (var i = 1; i <= parseInt(gameCount); ++i) {
-    $(`#game-header-${i}`).css({ position: "relative", visibility: "visible" });
-    $(`#blue-game-score-${i}`).css({
-      position: "relative",
-      visibility: "visible",
-    });
-    $(`#orange-game-score-${i}`).css({
+    $(`#scorecard-gamescores-header-${i}`).css({ position: "relative", visibility: "visible" });
+    $(`#game-score-${i}`).css({
       position: "relative",
       visibility: "visible",
     });
@@ -583,14 +583,14 @@ function getOptimalFontSize(content, max_width, initial_font_size, font_family) 
 }
 
 function calculateIdealScoreCardTeamNameFontSize(text) {
-  const MAX_LENGTH = 300; // pixels
-  const INITIAL_FONT_SIZE = 64; // pixels
+  const MAX_LENGTH = 200; // pixels
+  const INITIAL_FONT_SIZE = 45; // pixels
   const FONT_FAMILY = 'Uni Sans Heavy';
   return getOptimalFontSize(text, MAX_LENGTH, INITIAL_FONT_SIZE, FONT_FAMILY);
 }
 
 function calculateIdealRosterCardTeamNameFontSize(text) {
-  const MAX_LENGTH = 630; // pixels
+  const MAX_LENGTH = 750; // pixels
   const INITIAL_FONT_SIZE = 46; // pixels
   const FONT_FAMILY = 'Uni Sans Heavy';
   return getOptimalFontSize(text, MAX_LENGTH, INITIAL_FONT_SIZE, FONT_FAMILY);

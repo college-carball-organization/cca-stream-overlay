@@ -13,89 +13,118 @@
   </head>
   <body>
     <div id="view-box">
-      <div class="main-container">
-
-        <div class="score-card">
-          <div class="blue-team-header" data-bind="style: { 'background-color': blueColorPrimary(), 'color': blueTextColor()  }">
-            <div id="blue-team-score-card-name" class="score-card-team-name" data-bind="text: blueName"></div>
-            <img id="blue-team-squiggle" src="/res/caster_page_squiggle.png" width="92" height="80" />
-            <img id="blue-team-mask" class="score-card-team-mask" src="/res/caster_page_team_mask.png" width="125" height="80" />
-            <div id="blue-team-score-card-wins" class="score-card-team-wins" data-bind="text: blueWins"></div>
-          </div>
-          <div class="game-headers">
-            <div id="game-header-1" class="game-header">G1</div>
-            <div id="game-header-2" class="game-header">G2</div>
-            <div id="game-header-3" class="game-header">G3</div>
-            <div id="game-header-4" class="game-header">G4</div>
-            <div id="game-header-5" class="game-header">G5</div>
-            <div id="game-header-6" class="game-header">G6</div>
-            <div id="game-header-7" class="game-header">G7</div>
-          </div>
-          <div class="blue-team-scores">
-            <div id="blue-game-score-1" class="game-score" data-bind="text: game1BlueScore"></div>
-            <div id="blue-game-score-2" class="game-score" data-bind="text: game2BlueScore"></div>
-            <div id="blue-game-score-3" class="game-score" data-bind="text: game3BlueScore"></div>
-            <div id="blue-game-score-4" class="game-score" data-bind="text: game4BlueScore"></div>
-            <div id="blue-game-score-5" class="game-score" data-bind="text: game5BlueScore"></div>
-            <div id="blue-game-score-6" class="game-score" data-bind="text: game6BlueScore"></div>
-            <div id="blue-game-score-7" class="game-score" data-bind="text: game7BlueScore"></div>
-          </div>
-          <div class="orange-team-scores">
-            <div id="orange-game-score-1" class="game-score" data-bind="text: game1OrangeScore"></div>
-            <div id="orange-game-score-2" class="game-score" data-bind="text: game2OrangeScore"></div>
-            <div id="orange-game-score-3" class="game-score" data-bind="text: game3OrangeScore"></div>
-            <div id="orange-game-score-4" class="game-score" data-bind="text: game4OrangeScore"></div>
-            <div id="orange-game-score-5" class="game-score" data-bind="text: game5OrangeScore"></div>
-            <div id="orange-game-score-6" class="game-score" data-bind="text: game6OrangeScore"></div>
-            <div id="orange-game-score-7" class="game-score" data-bind="text: game7OrangeScore"></div>
-          </div>
-          <div class="best-of-series">
-            <div class="best-of-series-text" data-bind="text: seriesLength"></div>
-          </div>
-          <div class="orange-team-header" data-bind="style: { 'background-color': orangeColorPrimary(), 'color': orangeTextColor() }">
-            <div id="orange-team-score-card-name" class="score-card-team-name" data-bind="text: orangeName"></div>
-            <img id="orange-team-squiggle" src="/res/caster_page_squiggle.png" width="92" height="80" />
-            <img id="orange-team-mask" class="score-card-team-mask" src="/res/caster_page_team_mask.png" width="125" height="80" />
-            <div id="orange-team-score-card-wins" class="score-card-team-wins" data-bind="text: orangeWins"></div>
-          </div>
-        </div>
-        
-        <div class="team-cards">
-
-          <div class="blue-team-card">
-
-            <div class="team-name blue-team-name" data-bind="style: { 'background-color': blueColorPrimary(), 'color': blueTextColor()  }">
-              <div id="blue-team-name-text" data-bind="text: blueName"></div>
-              <div class="team-standing" data-bind="text: blueStanding"></div>
-            </div>
-            <div class="blue-team-stat-titles"></div>
-            <div class="team-players blue-team-players">
-
-              <div class="team-player blue-team-player-1">
-                <div class="player-name" data-bind="text: blueP1"></div>
-              </div>
-              <div class="team-player blue-team-player-2">
-                <div class="player-name" data-bind="text: blueP2"></div>
-              </div>
-              <div class="team-player blue-team-player-3">
-                <div class="player-name" data-bind="text: blueP3"></div>
-              </div>
-            </div>
-          </div>
+      <div class="score-card-wrapper">
+        <div id="score-card">
           
-          <div class="orange-team-card">
-            <div class="orange-team-name" data-bind="style: { 'background-color': orangeColorPrimary(), 'color': orangeTextColor() }">
-              <div id="orange-team-name-text" data-bind="text: orangeName"></div>
+          <div class="scorecard-team-names">
+            <div class="scorecard-team-name scorecard-blue-team" data-bind="style: { 'background-color': blueColorPrimary(), 'color': blueTextColor() }">
+              <div id="blue-team-score-card-name" class="scorecard-team-name-text" data-bind="text: blueName"></div>
             </div>
-            <div class="orange-team-separator" data-bind="style: { 'background-color': orangeColorSecondary() }"></div>
-            <div class="orange-team-players" data-bind="style: { 'background-color': orangeColorPrimary(), 'color': orangeTextColor() }">
-              <div class="team-player orange-team-player-1 player-name" data-bind="text: orangeP1"></div>
-              <div class="team-player orange-team-player-2 player-name" data-bind="text: orangeP2"></div>
-              <div class="team-player orange-team-player-3 player-name" data-bind="text: orangeP3"></div>
+            <div class="scorecard-team-name scorecard-orange-team" data-bind="style: { 'background-color': orangeColorPrimary(), 'color': orangeTextColor() }">
+              <div id="orange-team-score-card-name" class="scorecard-team-name-text" data-bind="text: orangeName"></div>
+            </div>
+          </div>
+
+          <div class="scorecard-gamescores">
+            <div class="scorecard-gamescores-headers">
+              <div id="scorecard-gamescores-header-1" class="scorecard-gamescores-header">
+                <div class="scorecard-gamescores-header-text">G1</div>
+              </div>
+              <div id="scorecard-gamescores-header-2" class="scorecard-gamescores-header">
+                <div class="scorecard-gamescores-header-text">G2</div>
+              </div>
+              <div id="scorecard-gamescores-header-3" class="scorecard-gamescores-header">
+                <div class="scorecard-gamescores-header-text">G3</div>
+              </div>
+              <div id="scorecard-gamescores-header-4" class="scorecard-gamescores-header">
+                <div class="scorecard-gamescores-header-text">G4</div>
+              </div>
+              <div id="scorecard-gamescores-header-5" class="scorecard-gamescores-header">
+                <div class="scorecard-gamescores-header-text">G5</div>
+              </div>
+              <div id="scorecard-gamescores-header-6" class="scorecard-gamescores-header">
+                <div class="scorecard-gamescores-header-text">G6</div>
+              </div>
+              <div id="scorecard-gamescores-header-7" class="scorecard-gamescores-header">
+                <div class="scorecard-gamescores-header-text">G7</div>
+              </div>
+            </div>
+            <div class="scorecard-gamescores-team-scores">
+              <div id="game-score-1" class="game-score">
+                <div data-bind="text: game1BlueScore, css: { 'game-score-lose': game1BlueScore() < game1OrangeScore() }"></div>
+                <div data-bind="text: game1OrangeScore, css: { 'game-score-lose': game1BlueScore() > game1OrangeScore() }"></div>
+              </div>
+              <div id="game-score-2" class="game-score">
+                <div data-bind="text: game2BlueScore, css: { 'game-score-lose': game2BlueScore() < game2OrangeScore() }"></div>
+                <div data-bind="text: game2OrangeScore, css: { 'game-score-lose': game2BlueScore() > game2OrangeScore() }"></div>
+              </div>
+              <div id="game-score-3" class="game-score">
+                <div data-bind="text: game3BlueScore, css: { 'game-score-lose': game3BlueScore() < game3OrangeScore() }"></div>
+                <div data-bind="text: game3OrangeScore, css: { 'game-score-lose': game3BlueScore() > game3OrangeScore() }"></div>
+              </div>
+              <div id="game-score-4" class="game-score">
+                <div data-bind="text: game4BlueScore, css: { 'game-score-lose': game4BlueScore() < game4OrangeScore() }"></div>
+                <div data-bind="text: game4OrangeScore, css: { 'game-score-lose': game4BlueScore() > game4OrangeScore() }"></div>
+              </div>
+              <div id="game-score-5" class="game-score">
+                <div data-bind="text: game5BlueScore, css: { 'game-score-lose': game5BlueScore() < game5OrangeScore() }"></div>
+                <div data-bind="text: game5OrangeScore, css: { 'game-score-lose': game5BlueScore() > game5OrangeScore() }"></div>
+              </div>
+              <div id="game-score-6" class="game-score">
+                <div data-bind="text: game6BlueScore, css: { 'game-score-lose': game6BlueScore() < game6OrangeScore() }"></div>
+                <div data-bind="text: game6OrangeScore, css: { 'game-score-lose': game6BlueScore() > game6OrangeScore() }"></div>
+              </div>
+              <div id="game-score-7" class="game-score">
+                <div data-bind="text: game7BlueScore, css: { 'game-score-lose': game7BlueScore() < game7OrangeScore() }"></div>
+                <div data-bind="text: game7OrangeScore, css: { 'game-score-lose': game7BlueScore() > game7OrangeScore() }"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <div class="team-cards">
+        <div class="team-card blue-team-card">
+          <div class="team-name blue-team-name" data-bind="style: { 'background-color': blueColorPrimary(), 'color': blueTextColor()  }">
+            <div id="blue-team-name-text" class="team-name-text" data-bind="text: blueName"></div>
+            <div class="team-standing" data-bind="text: blueStanding"></div>
+          </div>
+
+          <div class="team-stat-titles"></div>
+
+          <div class="team-players">
+            <div class="team-player">
+              <div class="player-name" data-bind="text: blueP1"></div>
+            </div>
+            <div class="team-player">
+              <div class="player-name" data-bind="text: blueP2"></div>
+            </div>
+            <div class="team-player">
+              <div class="player-name" data-bind="text: blueP3"></div>
             </div>
           </div>
         </div>
 
+        <div class="team-card">
+          <div class="team-name" data-bind="style: { 'background-color': orangeColorPrimary(), 'color': orangeTextColor()  }">
+            <div id="orange-team-name-text" class="team-name-text" data-bind="text: orangeName"></div>
+            <div class="team-standing" data-bind="text: orangeStanding"></div>
+          </div>
+
+          <div class="team-stat-titles"></div>
+
+          <div class="team-players">
+            <div class="team-player">
+              <div class="player-name" data-bind="text: orangeP1"></div>
+            </div>
+            <div class="team-player">
+              <div class="player-name" data-bind="text: orangeP2"></div>
+            </div>
+            <div class="team-player">
+              <div class="player-name" data-bind="text: orangeP3"></div>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   </body>
