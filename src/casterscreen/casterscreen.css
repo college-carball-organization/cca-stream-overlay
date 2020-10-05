@@ -8,26 +8,6 @@
   src: url('../res/Uni Sans SemiBold Italic.otf');
 }
 
-:root {
-  --squiggle-shift: 295px;
-  --mask-shift: 310px;
-
-  /* Default values changed because Ben's computer is a dumb and apparently works without them.
-  --scoreboard-team-text-padding-top: 11px:
-  --game-header-text-padding-top: 3px;
-  --game-score-text-padding-top: 3px;
-  --scorecard-best-of-series-padding-top: 3px;
-  --team-panel-team-name-padding-top: 5px;
-  --team-panel-player-names-padding-top: 15px;
-  */
-  --scoreboard-team-text-padding-top: 0px;
-  --game-header-text-padding-top: 0px;
-  --game-score-text-padding-top: 0px;
-  --scorecard-best-of-series-padding-top: 0px;
-  --team-panel-team-name-padding-top: 0px;
-  --team-panel-player-names-padding-top: 0px;
-}
-
 #view-box {
   font-family: 'Uni Sans Heavy';
   width: 1920px;
