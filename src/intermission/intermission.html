@@ -12,13 +12,15 @@
     <link href="/panel.css" rel="stylesheet" type="text/css">
   </head>
   <body>
-    <div id="divpanel">
-      <div class="team-container">
-        <div id="blue-team-container" data-bind="style: { 'color': blueTextColor(), 'background-color': blueColorPrimary() }">
-          <div id="blue-team-name" data-bind="text: blueName"></div>
+    <div id="view-box">
+      <div class="teams-container">
+        <div class="team-container" data-bind="style: { 'color': blueTextColor(), 'background-color': blueColorPrimary() }">
+          <div class="team-name" data-bind="text: blueName"></div>
+          <div class="team-standing" data-bind="text: blueStanding"></div>
         </div>
-        <div id="orange-team-container" data-bind="style: { 'color': orangeTextColor(), 'background-color': orangeColorPrimary() }">
-          <div id="orange-team-name" data-bind="text: orangeName"></div>
+        <div class="team-container" data-bind="style: { 'color': orangeTextColor(), 'background-color': orangeColorPrimary() }">
+          <div class="team-name" data-bind="text: orangeName"></div>
+          <div class="team-standing" data-bind="text: orangeStanding"></div>
         </div>
       </div>
     </div>
