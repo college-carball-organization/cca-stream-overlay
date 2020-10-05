@@ -3,275 +3,244 @@
   src: url('../res/Uni Sans Heavy.otf');
 }
 
-:root {
-  --main-container-top-indent: 52px;
-  --main-container-horizontal-indent: 76px;
-  --main-container-bottom-indent: 104px;
-  --squiggle-shift: 295px;
-  --mask-shift: 310px;
-
-  /* Default values changed because Ben's computer is a dumb and apparently works without them.
-  --scoreboard-team-text-padding-top: 11px:
-  --game-header-text-padding-top: 3px;
-  --game-score-text-padding-top: 3px;
-  --scorecard-best-of-series-padding-top: 3px;
-  --team-panel-team-name-padding-top: 5px;
-  --team-panel-player-names-padding-top: 15px;
-  */
-  --scoreboard-team-text-padding-top: 0px;
-  --game-header-text-padding-top: 0px;
-  --game-score-text-padding-top: 0px;
-  --scorecard-best-of-series-padding-top: 0px;
-  --team-panel-team-name-padding-top: 0px;
-  --team-panel-player-names-padding-top: 0px;
+@font-face {
+  font-family: 'Uni Sans SemiBold Italic';
+  src: url('../res/Uni Sans SemiBold Italic.otf');
 }
 
-#divpanel {
+#view-box {
+  position: relative;
   font-family: 'Uni Sans Heavy';
   width: 1920px;
   height: 1080px;
+  overflow: hidden;
 }
 
-.main-container {
+.score-card-wrapper {
   position: absolute;
-  width: calc(1920px - (2 * var(--main-container-horizontal-indent)));
-  height: calc(1080px - var(--main-container-top-indent) - var(--main-container-bottom-indent));
-  margin: var(--main-container-top-indent) var(--main-container-horizontal-indent) var(--main-container-bottom-indent);
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  align-items: stretch;
-}
-
-.caster-windows {
-  visibility: hidden;
-  background-color: yellow;
+  top: 540px;
   width: 100%;
-  height: 502px;
-  display: flex;
-  justify-content: space-evenly;
-  align-items: stretch;
-}
-
-.caster-window-left {
-  background-color: #222222;
-  margin: 6px 3px 6px 6px;
-  flex: 1;
-}
-
-.caster-window-right {
-  background-color: #222222;
-  margin: 6px 6px 6px 3px;
-  flex: 1;
-}
-
-.bottom-panels {
-  margin-top: 40px;
-  flex: 1;
-  display: flex;
-  justify-content: space-between;
-  align-items: stretch;
-}
-
-.score-card {
-  background-color: black;
-  width: 434px;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  align-items: stretch;
-}
-
-.score-card-team-name {
-  font-size: 64px;
-  margin-left: 20px;
-  padding-top: var(--scoreboard-team-text-padding-top);
-}
-
-.score-card-team-wins {
-  font-size: 64px;
-  margin-right: 15px;
-  padding-top: var(--scoreboard-team-text-padding-top);
-  z-index: 50;
-}
-
-.score-card-team-mask {
-  position: absolute;
-  left: var(--mask-shift);
-  z-index: 25;
-}
-
-.blue-team-header {
-  background-color: yellow;
-  height: 80px;
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
-  align-items: center;
-}
-
-#blue-team-squiggle {
-  position: absolute;
-  left: var(--squiggle-shift);
-}
-
-.game-headers {
-  background-color: #282828;
-  height: 40px;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-evenly;
-  align-items: center;
-}
-
-.game-header {
-  font-size: 26px;
-  color: white;
-  padding-top: var(--game-header-text-padding-top);
-  width: 45px;
-  text-align: center;
-}
-
-.game-score {
-  font-size: 44px;
-  color: black;
-  padding-top: var(--game-score-text-padding-top);
-  width: 45px;
-  text-align: center;
-}
-
-.blue-team-scores {
-  background-color: #BBBDBF;
-  height: 72px;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-evenly;
-  align-items: center;
-}
-
-.orange-team-scores {
-  background-color: #A6A8AB;
-  height: 72px;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-evenly;
-  align-items: center;
-}
-
-.best-of-series {
-  background-color: #0F0F0F;
-  color: white;
-  font-size: 26px;
-  height: 40px;
-  display: flex;
   justify-content: center;
   align-items: center;
 }
 
-.best-of-series-text {
-  padding-top: var(--scorecard-best-of-series-padding-top);
-}
-
-.orange-team-header {
-  background-color: blue;
-  height: 80px;
+#score-card {
+  height: 149px;
   display: flex;
   flex-direction: row;
+  justify-content: flex-start;
+  align-items: flex-start;
+}
+
+.scorecard-team-names {
+  height: 100%;
+  width: 423px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: flex-start;
+}
+
+.scorecard-team-name {
+  position: relative;
+  width: 100%;
+  height: 59px;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+.scorecard-team-name-text {
+  font-family: "Uni Sans Heavy";
+  font-size: 45px;
+  margin-left: 16px;
+}
+
+.scorecard-blue-team {
+  border-radius: 10px 0 0 0;
+}
+
+.scorecard-orange-team {
+  border-radius: 0 0 0 10px;
+}
+
+.scorecard-swoosh {
+  position: absolute;
+  right: 59px;
+  width: 68px;
+  height: 60px;
+  mask-type: alpha;
+  mask-mode: alpha;
+  mask-size: cover;
+  mask-repeat: no-repeat;
+  mask-image: url('../res/swoosh.svg');
+  -webkit-mask-mode: alpha;
+  -webkit-mask-size: cover;
+  -webkit-mask-repeat: no-repeat;
+  -webkit-mask-image: url('../res/swoosh.svg');
+  background-color: black;
+}
+
+.series-score {
+  position: absolute;
+  right: 13px;
+  width: 46px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+.series-score-text {
+  font-family: "Uni Sans Heavy";
+  font-size: 39px;
+}
+
+.scorecard-gamescores {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+}
+
+.scorecard-gamescores-headers {
+  height: 30px;
+  padding-left: 7px;
+  padding-right: 29px;
+  border-radius: 10px 10px 0 0;
+  background-color: #0F0F0F;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: flex-start;
+}
+
+.scorecard-gamescores-header {
+  width: 45px;
+  height: 100%;
+  font-family: "Uni Sans Heavy";
+  font-size: 17px;
+  color: #FFFFFF;
+  margin-left: 22px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+.scorecard-gamescores-header-text {
+  font-family: "Uni Sans Heavy";
+  font-size: 17px;
+  color: #FFFFFF;
+}
+
+.scorecard-gamescores-team-scores {
+  height: 119px;
+  background-color: rgba(0, 0, 0, 0.5);
+  padding-left: 7px;
+  padding-right: 29px;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: stretch;
+}
+
+.game-score {
+  width: 45px;
+  font-family: "Uni Sans Heavy";
+  font-size: 37px;
+  color: #FFFFFF;
+  margin-top: 7px;
+  margin-bottom: 7px;
+  margin-left: 22px;
+  display: flex;
+  flex-direction: column;
   justify-content: space-between;
   align-items: center;
 }
 
-#orange-team-squiggle {
-  position: absolute;
-  left: var(--squiggle-shift);
+.game-score-lose {
+  opacity: 0.5;
 }
 
 .team-cards {
-  background-color: brown;
-  width: 1290px;
+  position: absolute;
+  top: 711px;
+  left: 50px;
+  height: 273px;
+  width: 1820px;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   align-items: stretch;
 }
 
-.blue-team-card {
-  background-color: yellow;
-  flex: 1;
+.team-card {
+  width: 884px;
   display: flex;
   flex-direction: column;
-  justify-content: start;
+  justify-content: flex-start;
   align-items: stretch;
 }
 
-.blue-team-name {
-  height: 114px;
+.team-name {
+  position: relative;
+  height: 68px;
+  border-radius: 10px 10px 0 0;
   display: flex;
   flex-direction: row;
   justify-content: flex-start;
-  align-items: flex-end;
+  align-items: center;
 }
 
-#blue-team-name-text {
-  font-size: 108px;
-  padding-top: var(--team-panel-team-name-padding-top);
-  margin-left: 20px;
-  line-height: 0.9;
+.team-name-text {
+  font-size: 46px;
+  font-family: "Uni Sans Heavy";
+  margin-left: 17px;
 }
 
-.blue-team-separator {
-  background-color: purple;
-  height: 11px;
+.team-standing {
+  position: absolute;
+  top: 14px;
+  right: 14px;
+  font-family: "Uni Sans SemiBold Italic";
+  font-size: 24px;
 }
 
-.blue-team-players {
-  flex: 1;
+.team-stat-titles {
+  height: 37px;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  border-radius: 0 0 10px 10px;
+}
+
+.team-players {
   display: flex;
   flex-direction: column;
-  justify-content: space-evenly;
-  align-items: stretch;
-  padding-left: 45px;
-  padding-top:var(--team-panel-player-names-padding-top);
-}
-
-.orange-team-card {
-  background-color: blue;
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-  justify-content: start;
+  justify-content: flex-start;
   align-items: stretch;
 }
 
-.orange-team-name {
-  height: 114px;
+.team-player {
+  height: 49px;
+  background-color: rgba(0, 0, 0, 0.5);
+  border-radius: 10px;
+  margin-top: 6px;
+
   display: flex;
-  justify-content: flex-end;
-  align-items: flex-end;
-}
-
-#orange-team-name-text {
-  font-size: 108px;
-  padding-top: var(--team-panel-team-name-padding-top);
-  margin-right: 20px;
-  line-height: 0.9;
-}
-
-.orange-team-separator {
-  background-color: red;
-  height: 11px;
-}
-
-.orange-team-players {
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-evenly;
-  align-items: flex-end;
-  padding-right: 45px;
-  padding-top: var(--team-panel-player-names-padding-top);
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
 }
 
 .player-name {
-  font-size: 68px;
+  color: #FFFFFF;
+  font-size: 34px;
+  margin-left: 17px;
 }
